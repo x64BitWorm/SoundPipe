@@ -75,7 +75,7 @@ namespace SP.UI.ViewModels
                 await _uiContext;
                 updater.Invoke();
             });
-            _updateTimer.Interval = TimeSpan.FromMilliseconds();
+            _updateTimer.Interval = TimeSpan.FromMilliseconds(100);
             _updateTimer.Start();
         }
     }

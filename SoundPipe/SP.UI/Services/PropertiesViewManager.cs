@@ -49,6 +49,10 @@ namespace SP.UI.Services
             {
                 result = ActionType.FromParameterType(parameter, actionType);
             }
+            else if (parameter.Type is DynamicImageType imageType)
+            {
+                result = ImageType.FromParameterType(parameter, imageType);
+            }
             else
             {
                 return null;

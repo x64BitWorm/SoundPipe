@@ -65,6 +65,13 @@
                     </StackPanel>
                 </DataTemplate>
 
+                <DataTemplate DataType="{x:Type types:ImageType}">
+                    <StackPanel x:Name="Root" Tag="{Binding .}" Margin="5">
+                        <TextBlock Text="{Binding Label}" />
+                        <Image Source="{Binding Output}" />
+                    </StackPanel>
+                </DataTemplate>
+
             </ItemsControl.Resources>
         </ItemsControl>
     </ScrollViewer>

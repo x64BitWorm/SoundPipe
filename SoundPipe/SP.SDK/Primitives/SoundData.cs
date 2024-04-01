@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SP.SDK.Primitives
+﻿namespace SP.SDK.Primitives
 {
     public struct SoundData
     {
@@ -20,6 +14,13 @@ namespace SP.SDK.Primitives
         {
             get => samples[index];
             set => samples[index] = value;
+        }
+
+        public SoundData Clone()
+        {
+            var result = new SoundData(Length);
+            Array.ConstrainedCopy(samples, 0, result.samples, 0, samples.Length);
+            return result;
         }
     }
 }
