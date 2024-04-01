@@ -2,32 +2,31 @@
 using SP.SDK.Primitives;
 using SP.SDK.Primitives.Types;
 
-namespace SP.Filters.Volume
+namespace SP.Filters.Peeker
 {
     public class Entry : IFilterEntry
     {
         public ISoundFilter ConstructFilter()
         {
-            return new Volume();
+            return new Peeker();
         }
 
         public DynamicParameter[] ConstructorParamaters()
         {
             return new DynamicParameter[]
             {
-                new DynamicParameter("input", "Входной поток", new DynamicStreamType()),
-                new DynamicParameter("level", "Уровень громкости (1.0 - без изменений)", new DynamicFloatType(-3.0f, +3.0f), 1.0f)
+                new DynamicParameter("input", "Входной поток", new DynamicStreamType())
             };
         }
 
         public string FilterDescription()
         {
-            return "Фильтр громкости применяемый к входному потоку";
+            return "Генератор перекрывающего сигнала тишины";
         }
 
         public string FilterName()
         {
-            return "Volume";
+            return "Peeker";
         }
 
         public int FilterVersion()
@@ -44,7 +43,8 @@ namespace SP.Filters.Volume
         {
             return new DynamicParameter[]
             {
-                new DynamicParameter("level", "Уровень громкости (1.0 - без изменений)", new DynamicFloatType(-3.0f, +3.0f))
+                new DynamicParameter("peek", "Применить перекрывающий сигнал", new DynamicActionType("Перекрыть"),
+                HotParameterType.WriteOnly)
             };
         }
     }

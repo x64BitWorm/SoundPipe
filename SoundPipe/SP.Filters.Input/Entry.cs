@@ -39,12 +39,7 @@ namespace SP.Filters.Input
             return FilterType.Provider;
         }
 
-        public DynamicParameter[] ReadableHotParamaters()
-        {
-            return Array.Empty<DynamicParameter>();
-        }
-
-        public DynamicParameter[] WritableHotParamaters()
+        public DynamicParameter[] HotParamaters()
         {
             return Array.Empty<DynamicParameter>();
         }

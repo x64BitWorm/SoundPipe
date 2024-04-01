@@ -6,6 +6,7 @@ using SP.UI.Components.StatusBar;
 using SP.UI.Models;
 using SP.UI.Services;
 using System.ComponentModel;
+using System.Threading;
 using System.Windows.Controls;
 
 namespace SP.UI.ViewModels
@@ -18,6 +19,7 @@ namespace SP.UI.ViewModels
         private readonly PropertiesViewManager _propertiesViewManager;
         private readonly ShemeManager _shemeManager;
 
+        private SynchronizationContext _uiContext;
         private ShemeConstructor<UINodeInfo> _shemeConstructor;
         private PipeSheme _pipeSheme;
 
@@ -93,6 +95,7 @@ namespace SP.UI.ViewModels
 
         public void ViewAttached()
         {
+            _uiContext = SynchronizationContext.Current;
             StatusBarSend.PushMessage("Добро пожаловать в SoundPipe!", StatusMessageType.Info, true);
         }
 
@@ -106,6 +109,11 @@ namespace SP.UI.ViewModels
             if (_pipeSheme != null)
             {
                 _pipeSheme.Destroy();
+            }
+            if (_updateTimer != null)
+            {
+                _updateTimer.Stop();
+                _updateTimer = null;
             }
             _pipeSheme = null;
         }

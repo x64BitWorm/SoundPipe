@@ -39,15 +39,7 @@ namespace SP.Filters.Speaker
             return FilterType.Consumer;
         }
 
-        public DynamicParameter[] ReadableHotParamaters()
-        {
-            return new DynamicParameter[]
-            {
-                new DynamicParameter("state", "Статус воспроизведения", new DynamicEnumType(new[] { "play", "pause" }))
-            };
-        }
-
-        public DynamicParameter[] WritableHotParamaters()
+        public DynamicParameter[] HotParamaters()
         {
             return new DynamicParameter[]
             {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SP.Domain
+﻿namespace SP.Domain
 {
     public class Settings
     {
@@ -12,7 +6,7 @@ namespace SP.Domain
 
         public Settings()
         {
-            FiltersPath = "C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\Filters\\";
+            FiltersPath = "C:\\Users\\Eax\\source\\repos\\SoundPipe\\Experiments\\Workspace\\Filters\\";
         }
     }
 }

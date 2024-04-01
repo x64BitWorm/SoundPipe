@@ -39,9 +39,13 @@ namespace SP.UI.Components.PropertiesStore
             var value = e.NewValue as PropertyType[];
         }
 
-        private void PropertyChangeInvoke(string id, object value)
+        private void PropertyChangeInvoke(PropertyType type, object value)
         {
-            var parameter = new ChangeEventParameter(id, value);
+            if (type.InteractionType == PropertyInteractionType.ReadOnly)
+            {
+                return;
+            }
+            var parameter = new ChangeEventParameter(type.Id, value);
             var newEvent = new ParametrizedRoutedEventArgs(PropertyChangeEvent, this, parameter);
             RaiseEvent(newEvent);
         }

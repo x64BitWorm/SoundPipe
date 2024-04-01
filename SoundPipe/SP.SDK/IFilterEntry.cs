@@ -10,8 +10,7 @@ namespace SP.SDK
 
         public FilterType GetFilterType();
         public DynamicParameter[] ConstructorParamaters();
-        public DynamicParameter[] WritableHotParamaters();
-        public DynamicParameter[] ReadableHotParamaters();
+        public DynamicParameter[] HotParamaters();
 
         public ISoundFilter ConstructFilter();
     }

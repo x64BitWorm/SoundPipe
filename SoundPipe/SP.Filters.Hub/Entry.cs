@@ -39,12 +39,7 @@ namespace SP.Filters.Hub
             return FilterType.SequentialProvider;
         }
 
-        public DynamicParameter[] ReadableHotParamaters()
-        {
-            return Array.Empty<DynamicParameter>();
-        }
-
-        public DynamicParameter[] WritableHotParamaters()
+        public DynamicParameter[] HotParamaters()
         {
             return Array.Empty<DynamicParameter>();
         }

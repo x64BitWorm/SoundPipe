@@ -19,7 +19,7 @@ namespace SP.Domain.Models
                 throw new InvalidOperationException($"Sheme has no '{name}' filter");
             }
             var filter = _filters[name];
-            var parameter = filter.Entry.WritableHotParamaters().FirstOrDefault(p => p.Name == key);
+            var parameter = filter.Entry.HotParamaters().FirstOrDefault(p => p.Name == key);
             if (parameter == null)
             {
                 throw new InvalidOperationException($"Filter '{name}' has no '{key}' parameter");
@@ -38,7 +38,7 @@ namespace SP.Domain.Models
                 throw new InvalidOperationException($"Sheme has no '{name}' filter");
             }
             var filter = _filters[name];
-            var parameter = filter.Entry.ReadableHotParamaters().FirstOrDefault(p => p.Name == key);
+            var parameter = filter.Entry.HotParamaters().FirstOrDefault(p => p.Name == key);
             if (parameter == null)
             {
                 throw new InvalidOperationException($"Filter '{name}' has no '{key}' parameter");
@@ -46,14 +46,10 @@ namespace SP.Domain.Models
             return filter.Filter.GetHotValue(key);
         }
 
-        public DynamicParameter[] ListReadWriteParameters(string name)
+        public DynamicParameter[] ListHotParameters(string name)
         {
             var entry = GetFilterEntry(name);
-            var parameters = entry.ReadableHotParamaters().Select(p => p.Name)
-                .IntersectBy(entry.WritableHotParamaters().Select(p => p.Name), entry => entry);
-            return entry.ReadableHotParamaters()
-                .Where(p => parameters.Contains(p.Name))
-                .ToArray();
+            return entry.HotParamaters();
         }
 
         public IFilterEntry GetFilterEntry(string name)

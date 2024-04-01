@@ -22,78 +22,41 @@ namespace SP.UI.Services
             }
             for (int i = 0; i < types.Length; i++)
             {
-                SetDefaultValue(ref types[i], values[i]);
+                types[i].SetDefaultValue(values[i]);
             }
         }
 
         private PropertyType ConvertToViewType(DynamicParameter parameter)
         {
+            PropertyType result;
             if (parameter.Type is DynamicStringType stringType)
             {
-                return FromStringType(parameter, stringType);
+                result = InputType.FromParameterType(parameter, stringType);
             }
-            if (parameter.Type is DynamicFloatType floatType)
+            else if (parameter.Type is DynamicFloatType floatType)
             {
-                return FromFloatType(parameter, floatType);
+                result = SliderType.FromParameterType(parameter, floatType);
             }
-            if (parameter.Type is DynamicEnumType enumType)
+            else if (parameter.Type is DynamicIntType intType)
             {
-                return FromEnumType(parameter, enumType);
+                result = IntSliderType.FromParameterType(parameter, intType);
             }
-            return null;
-        }
-
-        private PropertyType FromStringType(DynamicParameter parameter, DynamicStringType stringType)
-        {
-            return new InputType()
+            else if (parameter.Type is DynamicEnumType enumType)
             {
-                Id = parameter.Name,
-                Label = parameter.Name
-            };
-        }
-
-        private PropertyType FromFloatType(DynamicParameter parameter, DynamicFloatType floatType)
-        {
-            return new SliderType()
-            {
-                Id = parameter.Name,
-                Label = parameter.Name,
-                Min = floatType.Min,
-                Max = floatType.Max
-            };
-        }
-
-        private PropertyType FromEnumType(DynamicParameter parameter, DynamicEnumType enumType)
-        {
-            return new ComboType()
-            {
-                Id = parameter.Name,
-                Label = parameter.Name,
-                Options = enumType.Options,
-            };
-        }
-
-        private void SetDefaultValue(ref PropertyType type, object value)
-        {
-            if (type is InputType inputType)
-            {
-                inputType.DefaultValue = value?.ToString() ?? string.Empty;
+                result = ComboType.FromParameterType(parameter, enumType);
             }
-            else if (type is SliderType sliderType)
+            else if (parameter.Type is DynamicActionType actionType)
             {
-                if (value is double)
-                {
-                    value = (float)(double)value;
-                }
-                sliderType.Current = (float)value;
+                result = ActionType.FromParameterType(parameter, actionType);
             }
-            else if (type is ComboType comboType)
+            else
             {
-                if (value is string)
-                {
-                    comboType.SelectedOption = (string)value;
-                }
+                return null;
             }
+            result.Id = parameter.Name;
+            result.Label = parameter.Name;
+            result.InteractionType = (PropertyInteractionType)(int)parameter.ParameterType;
+            return result;
         }
     }
 }

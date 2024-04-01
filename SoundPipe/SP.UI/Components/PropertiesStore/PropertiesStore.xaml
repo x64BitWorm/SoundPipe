@@ -12,20 +12,42 @@
         <ItemsControl ItemsSource="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:PropertiesStore}}, Path=Properties}"
                       Margin="5">
             <ItemsControl.Resources>
+                
                 <DataTemplate DataType="{x:Type types:InputType}">
                     <StackPanel x:Name="Root" Tag="{Binding .}" Margin="5">
                         <TextBlock Text="{Binding Label}" />
                         <TextBox Text="{Binding DefaultValue}" TextChanged="InputTypeTextChanged" />
                     </StackPanel>
                 </DataTemplate>
+
                 <DataTemplate DataType="{x:Type types:SliderType}">
                     <StackPanel x:Name="Root" Tag="{Binding .}" Margin="5">
                         <TextBlock Text="{Binding Label}" />
-                        <Slider Minimum="{Binding Min}" Maximum="{Binding Max}" Value="{Binding Current}"
+                        <Slider x:Name="MainSlider" Minimum="{Binding Min}" Maximum="{Binding Max}" Value="{Binding Current}"
                                 AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2"
-                                ValueChanged="SliderValueChanged"/>
+                                ValueChanged="SliderValueChanged" Visibility="Collapsed" />
+                        <ProgressBar x:Name="MainProgress" Value="{Binding Current}" Visibility="Collapsed" 
+                                     Minimum="{Binding Min}" Maximum="{Binding Max}" Height="10" />
+                    </StackPanel>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding InteractionType}" Value="ReadWrite">
+                            <Setter TargetName="MainSlider" Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding InteractionType}" Value="ReadOnly">
+                            <Setter TargetName="MainProgress" Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+                
+                <DataTemplate DataType="{x:Type types:IntSliderType}">
+                    <StackPanel x:Name="Root" Tag="{Binding .}" Margin="5">
+                        <TextBlock Text="{Binding Label}" />
+                        <Slider Minimum="{Binding Min}" Maximum="{Binding Max}" Value="{Binding Current}"
+                                AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2" TickFrequency="1"
+                                ValueChanged="IntSliderValueChanged"/>
                     </StackPanel>
                 </DataTemplate>
+
                 <DataTemplate DataType="{x:Type types:ComboType}">
                     <StackPanel x:Name="Root" Tag="{Binding .}" Margin="5">
                         <TextBlock Text="{Binding Label}" />
@@ -33,6 +55,16 @@
                                   SelectionChanged="ComboValueChanged" />
                     </StackPanel>
                 </DataTemplate>
+
+                <DataTemplate DataType="{x:Type types:ActionType}">
+                    <StackPanel x:Name="Root" Tag="{Binding .}" Margin="5">
+                        <TextBlock Text="{Binding Label}" />
+                        <Button Content="{Binding ActionTitle}" 
+                                PreviewMouseLeftButtonUp="ActionValueChanged" 
+                                PreviewMouseLeftButtonDown="ActionValueChanged" />
+                    </StackPanel>
+                </DataTemplate>
+
             </ItemsControl.Resources>
         </ItemsControl>
     </ScrollViewer>

@@ -35,8 +35,7 @@ namespace SP.UI.ViewModels
             }
             try
             {
-                _pipeSheme.Destroy();
-                _pipeSheme = null;
+                StopPipeSheme();
                 SyncGraphConstructorToUiGraph();
             }
             catch (Exception e)

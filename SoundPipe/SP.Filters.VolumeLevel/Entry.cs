@@ -39,17 +39,13 @@ namespace SP.Filters.VolumeLevel
             return FilterType.Provider;
         }
 
-        public DynamicParameter[] ReadableHotParamaters()
+        public DynamicParameter[] HotParamaters()
         {
             return new DynamicParameter[]
             {
-                new DynamicParameter("level", "Уровень громкости", new DynamicFloatType(0.0f, 1.0f))
+                new DynamicParameter("level", "Уровень громкости", new DynamicFloatType(0.0f, 1.0f), 
+                HotParameterType.ReadOnly)
             };
-        }
-
-        public DynamicParameter[] WritableHotParamaters()
-        {
-            return Array.Empty<DynamicParameter>();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using SP.UI.Models;
+using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Forms;
@@ -94,9 +95,9 @@ namespace SP.UI.ViewModels
                 StatusBarSend.PushMessage("Схема загружена", Components.StatusBar.StatusMessageType.Success, true);
                 _openedFileName = fileName;
             }
-            catch
+            catch(Exception e)
             {
-                StatusBarSend.PushMessage("Не удалось открыть схему", Components.StatusBar.StatusMessageType.Error, true);
+                StatusBarSend.PushMessage($"Не удалось открыть схему - {e.Message}", Components.StatusBar.StatusMessageType.Error, true);
             }
             UpdateTitle();
         }
