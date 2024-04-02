@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SP.SDK.Exceptions;
+using System;
 using System.Windows;
 
 namespace SP.UI.ViewModels
@@ -16,6 +17,18 @@ namespace SP.UI.ViewModels
             {
                 SyncUiGraphToGraphConstructor();
                 _pipeSheme = _shemeConstructor.ConstructSheme();
+            }
+            catch (UnattachedLinkException e)
+            {
+                StatusBarSend.PushMessage($"Не подключен вход {e.LinkNumber + 1} у элемента '{_shemeConstructor[e.ElementName].Entry.FilterName()}'\r\nВсе входы элементов должны быть подключены для запуска",
+                    Components.StatusBar.StatusMessageType.Error, true);
+                return;
+            }
+            catch (ParameterTypeException e)
+            {
+                StatusBarSend.PushMessage($"Элемент '{_shemeConstructor[e.ElementName].Entry.FilterName()}' невозможно создать -\r\n{e.ParameterMessage}\r\nВозможно стоит проверить параметры",
+                    Components.StatusBar.StatusMessageType.Error, true);
+                return;
             }
             catch (Exception e)
             {

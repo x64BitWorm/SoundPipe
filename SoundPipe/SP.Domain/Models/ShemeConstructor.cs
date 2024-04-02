@@ -1,4 +1,5 @@
 ﻿using SP.SDK;
+using SP.SDK.Exceptions;
 using SP.SDK.Primitives;
 using SP.SDK.Primitives.Types;
 
@@ -129,11 +130,18 @@ namespace SP.Domain.Models
                 {
                     if (parameters[index] is not string)
                     {
-                        throw new InvalidOperationException($"Link at position {index} for '{filterProto.Key}' not connected");
+                        throw new UnattachedLinkException(filterProto.Key, index);
                     }
                     parameters[index] = result[(string)parameters[index]].Item2;
                 }
-                filter.Initialize(parameters);
+                try
+                {
+                    filter.Initialize(parameters);
+                }
+                catch (Exception e)
+                {
+                    throw new ParameterTypeException(filterProto.Value.Id, e.Message);
+                }
             }
             return new PipeSheme(result);
         }
