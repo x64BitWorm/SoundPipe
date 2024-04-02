@@ -63,6 +63,12 @@
             <MenuItem Header="Плагины">
                 <MenuItem Header="Установить новый" />
                 <MenuItem Header="Менеджер плагинов" />
+                <Separator />
+                <MenuItem Header="Настройки" Click="SettingsClick">
+                    <MenuItem.Icon>
+                        <emoji:TextBlock Text="⚙️" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Справка">
                 <MenuItem Header="Руководство пользователя" />

@@ -1,10 +1,12 @@
-﻿using SP.Domain;
+﻿using Microsoft.Extensions.DependencyInjection;
+using SP.Domain;
 using SP.Domain.Models;
 using SP.UI.Components.GraphViewer;
 using SP.UI.Components.PropertiesStore;
 using SP.UI.Components.StatusBar;
 using SP.UI.Models;
 using SP.UI.Services;
+using System;
 using System.ComponentModel;
 using System.Threading;
 using System.Windows.Controls;
@@ -18,7 +20,9 @@ namespace SP.UI.ViewModels
         private readonly ShemeGraphConverter _shemeGraphConverter;
         private readonly PropertiesViewManager _propertiesViewManager;
         private readonly ShemeManager _shemeManager;
+        private readonly IServiceProvider _serviceProvider;
 
+        private SettingsModel _settingsModel;
         private SynchronizationContext _uiContext;
         private ShemeConstructor<UINodeInfo> _shemeConstructor;
         private PipeSheme _pipeSheme;
@@ -82,13 +86,15 @@ namespace SP.UI.ViewModels
 
         public MainViewModel(ShemeProvider shemeProvider, ContextMenuBuilder contextMenuBuilder,
             ShemeGraphConverter shemeGraphConverter, PropertiesViewManager propertiesViewManager,
-            ShemeManager shemeManager)
+            ShemeManager shemeManager, IServiceProvider serviceProvider, SettingsProvider settingsProvider)
         {
             _shemeProvider = shemeProvider;
             _contextMenuBuilder = contextMenuBuilder;
             _shemeGraphConverter = shemeGraphConverter;
             _propertiesViewManager = propertiesViewManager;
             _shemeManager = shemeManager;
+            _serviceProvider = serviceProvider;
+            _settingsModel = settingsProvider.Load();
             CreateEmptyShemeMenu();
             StatusBarSend = new StatusBarMessagePipe();
         }

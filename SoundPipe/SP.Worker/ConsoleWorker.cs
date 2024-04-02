@@ -14,7 +14,7 @@ namespace SP.Worker
             var services = sp.BuildServiceProvider();
             var filtersManager = services.GetService(typeof(FiltersManager)) as FiltersManager;
             var shemeManager = services.GetService(typeof(ShemeManager)) as ShemeManager;
-            filtersManager.LoadFilters();
+            filtersManager.LoadFilters("C:\\Users\\Eax\\source\\repos\\SoundPipe\\Experiments\\Workspace\\Filters\\");
 
             var shemeContent = File.ReadAllText("C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\shemeUIhub.json");
             var shemeConstructor = shemeManager.ReadShemeConstructor<UINodeInfo>(shemeContent);

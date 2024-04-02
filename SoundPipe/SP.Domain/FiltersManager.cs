@@ -10,20 +10,18 @@ namespace SP.Domain
 {
     public class FiltersManager
     {
-        private readonly Settings _settings;
         private readonly Logger _logger;
         private readonly Dictionary<string, IFilterEntry> _filterEntries;
 
-        public FiltersManager(Settings settings, Logger logger)
+        public FiltersManager(Logger logger)
         {
-            _settings = settings;
             _logger = logger;
             _filterEntries = new Dictionary<string, IFilterEntry>();
         }
 
-        public void LoadFilters()
+        public void LoadFilters(string filtersPath)
         {
-            var filtersPaths = Directory.EnumerateFiles(_settings.FiltersPath, "*.dll");
+            var filtersPaths = Directory.EnumerateFiles(filtersPath, "*.dll");
             foreach (var filterPath in filtersPaths)
             {
                 try

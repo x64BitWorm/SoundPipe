@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using SP.Domain.Models;
 using SP.SDK;
+using SP.SDK.Exceptions;
 using SP.SDK.Primitives;
 using SP.SDK.Primitives.Types;
 
@@ -45,7 +46,14 @@ namespace SP.Domain
             var filters = JsonConvert.DeserializeObject<FilterNodeJson<T>[]>(shemeJson);
             foreach (var filter in filters)
             {
-                result.AddFilter(filter.Filter.Id, filter.Filter.Type, filter.Meta);
+                try
+                {
+                    result.AddFilter(filter.Filter.Id, filter.Filter.Type, filter.Meta);
+                }
+                catch (Exception e)
+                {
+                    throw new LoadFilterException(filter.Filter.Type, e.Message);
+                }
             }
             foreach (var filterId in result.GetFilterIds())
             {

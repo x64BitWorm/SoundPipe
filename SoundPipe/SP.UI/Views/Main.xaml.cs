@@ -86,6 +86,11 @@ namespace SP.UI
             _viewModel.ShowShemeStats();
         }
 
+        private void SettingsClick(object sender, RoutedEventArgs e)
+        {
+            _viewModel.ShowSettingsWindow();
+        }
+
         #endregion
 
         private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e)

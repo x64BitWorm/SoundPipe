@@ -1,0 +1,61 @@
+﻿<Window x:Class="SP.UI.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SP.UI.Views"
+        mc:Ignorable="d"
+        Loaded="WindowLoaded"
+        ResizeMode="NoResize"
+        WindowStyle="ToolWindow"
+        xmlns:viewmodels="clr-namespace:SP.UI.ViewModels"
+        xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
+        SizeToContent="Height"
+        ShowInTaskbar="False"
+        d:DataContext="{d:DesignInstance viewmodels:SettingsViewModel}"
+        WindowStartupLocation="CenterOwner" 
+        Title="Настройки" Height="400" Width="500">
+    <Grid Margin="5">
+        <Grid.Resources>
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="Margin" Value="0,3,0,0" />
+                <Setter Property="Padding" Value="0,0,0,5" />
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="0,0,0,5" />
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Width" Value="70" />
+                <Setter Property="Height" Value="25" />
+                <Setter Property="Margin" Value="5,0,0,0" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <StackPanel>
+                <Label Content="Путь папки плагинов" />
+                <TextBox Text="{Binding SettingsModel.FiltersPath}" />
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Интервал обновления параметров (мсек)" />
+                <TextBox Text="{Binding SettingsModel.ParameterRefreshRate}" PreviewTextInput="NumberValidationTextBox" />
+            </StackPanel>
+            <StackPanel>
+                <emoji:TextBlock>
+                    <LineBreak/>
+                    ⚠️ Некоторые изменения могут потребовать перезапуска приложения
+                    <LineBreak/>
+                </emoji:TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Сохранить" Click="OkClick" />
+        </StackPanel>
+    </Grid>
+</Window>

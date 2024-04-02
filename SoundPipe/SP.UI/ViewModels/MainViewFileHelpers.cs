@@ -1,4 +1,5 @@
-﻿using SP.UI.Models;
+﻿using SP.SDK.Exceptions;
+using SP.UI.Models;
 using System;
 using System.IO;
 using System.Windows;
@@ -95,7 +96,12 @@ namespace SP.UI.ViewModels
                 StatusBarSend.PushMessage("Схема загружена", Components.StatusBar.StatusMessageType.Success, true);
                 _openedFileName = fileName;
             }
-            catch(Exception e)
+            catch (LoadFilterException e)
+            {
+                StatusBarSend.PushMessage($"Не удалось загрузить фильтр '{e.FilterName}'\r\n{e.InnerMessage}\r\nВозможно плагин этого фильтра не установлен", 
+                    Components.StatusBar.StatusMessageType.Error, true);
+            }
+            catch (Exception e)
             {
                 StatusBarSend.PushMessage($"Не удалось открыть схему - {e.Message}", Components.StatusBar.StatusMessageType.Error, true);
             }

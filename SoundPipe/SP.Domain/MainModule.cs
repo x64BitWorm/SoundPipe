@@ -6,7 +6,6 @@ namespace SP.Domain
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            services.AddSingleton<Settings>();
             services.AddSingleton<Logger>();
             services.AddSingleton<FiltersManager>();
             services.AddSingleton<ShemeManager>();
