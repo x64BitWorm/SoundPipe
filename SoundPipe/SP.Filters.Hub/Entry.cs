@@ -1,4 +1,5 @@
 ﻿using SP.SDK;
+using SP.SDK.Models;
 using SP.SDK.Primitives;
 using SP.SDK.Primitives.Types;
 
@@ -37,6 +38,11 @@ namespace SP.Filters.Hub
         public FilterType GetFilterType()
         {
             return FilterType.SequentialProvider;
+        }
+
+        public FilterGroupType GetGroupType()
+        {
+            return FilterGroupType.Other;
         }
 
         public DynamicParameter[] HotParamaters()

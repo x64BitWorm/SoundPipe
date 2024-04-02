@@ -1,4 +1,5 @@
-﻿using SP.SDK.Primitives;
+﻿using SP.SDK.Models;
+using SP.SDK.Primitives;
 
 namespace SP.SDK
 {
@@ -9,6 +10,7 @@ namespace SP.SDK
         public int FilterVersion();
 
         public FilterType GetFilterType();
+        public FilterGroupType GetGroupType();
         public DynamicParameter[] ConstructorParamaters();
         public DynamicParameter[] HotParamaters();
 

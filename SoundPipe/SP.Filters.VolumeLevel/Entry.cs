@@ -1,4 +1,5 @@
 ﻿using SP.SDK;
+using SP.SDK.Models;
 using SP.SDK.Primitives;
 using SP.SDK.Primitives.Types;
 
@@ -37,6 +38,11 @@ namespace SP.Filters.VolumeLevel
         public FilterType GetFilterType()
         {
             return FilterType.Provider;
+        }
+
+        public FilterGroupType GetGroupType()
+        {
+            return FilterGroupType.Analyzer;
         }
 
         public DynamicParameter[] HotParamaters()

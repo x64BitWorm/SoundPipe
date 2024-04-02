@@ -1,6 +1,8 @@
 ﻿using SP.Domain;
+using SP.SDK.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 
 namespace SP.UI.Services
@@ -18,6 +20,18 @@ namespace SP.UI.Services
         {
             var result = new ContextMenu();
             var items = new List<MenuItem>();
+            var groupMap = new Dictionary<FilterGroupType, ObservableCollection<MenuItem>>();
+            foreach (var group in GetFilterGroupsLabels())
+            {
+                var subItems = new ObservableCollection<MenuItem>();
+                var subItem = new MenuItem()
+                {
+                    Header = group.Item1,
+                    ItemsSource = subItems
+                };
+                items.Add(subItem);
+                groupMap[group.Item2] = subItems;
+            }
             var filters = _filtersManager.ListAvailableFilters();
             foreach (var filter in filters)
             {
@@ -29,7 +43,7 @@ namespace SP.UI.Services
                     ToolTip = $"Версия: {filterInfo.FilterVersion()} {(filterInfo.GetFilterType() == SDK.Primitives.FilterType.Consumer ? "(Потребитель)" : "")}\r\n\r\n{filterInfo.FilterDescription()}"
                 };
                 menuItem.Click += (s, e) => addNewNodeAction((e.Source as MenuItem).Tag as string);
-                items.Add(menuItem);
+                groupMap[filterInfo.GetGroupType()].Add(menuItem);
             }
             result.ItemsSource = items;
             return result;
@@ -53,6 +67,15 @@ namespace SP.UI.Services
             items.Add(menuItem);
             result.ItemsSource = items;
             return result;
+        }
+
+        private IEnumerable<(string, FilterGroupType)> GetFilterGroupsLabels()
+        {
+            yield return ("Источник", FilterGroupType.Input);
+            yield return ("Потребитель", FilterGroupType.Consumer);
+            yield return ("Фильтр", FilterGroupType.Filter);
+            yield return ("Анализатор", FilterGroupType.Analyzer);
+            yield return ("Прочее", FilterGroupType.Other);
         }
     }
 }
