@@ -45,6 +45,11 @@ namespace SP.Filters.WaveVisualizer
             return FilterGroupType.Analyzer;
         }
 
+        public Uri GetSourceCodeLink()
+        {
+            return new Uri("https://github.com/x64BitWorm/SoundPipe/tree/main/SoundPipe/SP.Filters.WaveVisualizer");
+        }
+
         public DynamicParameter[] HotParamaters()
         {
             return new DynamicParameter[]

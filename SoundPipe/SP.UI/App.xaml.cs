@@ -21,7 +21,8 @@ namespace SP.UI
 
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            var settings = _serviceProvider.GetService<SettingsProvider>().Load();
+            var settings = _serviceProvider.GetService<SettingsProvider>()?.Load();
+            _serviceProvider.GetService<FilterUpdateService>()?.UpdateFilters();
             _serviceProvider.GetService<FiltersManager>()?.LoadFilters(settings.FiltersPath);
             _serviceProvider.GetService<MainWindow>()?.Show();
         }
@@ -32,11 +33,14 @@ namespace SP.UI
             services.AddTransient<MainWindow>();
             services.AddTransient<SettingsViewModel>();
             services.AddTransient<SettingsWindow>();
+            services.AddTransient<PluginsViewModel>();
+            services.AddTransient<PluginsWindow>();
             services.AddSingleton<ShemeProvider>();
             services.AddSingleton<ContextMenuBuilder>();
             services.AddSingleton<ShemeGraphConverter>();
             services.AddSingleton<PropertiesViewManager>();
             services.AddSingleton<SettingsProvider>();
+            services.AddSingleton<FilterUpdateService>();
             MainModule.RegisterServices(services);
         }
 

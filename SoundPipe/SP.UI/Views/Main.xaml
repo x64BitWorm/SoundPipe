@@ -61,8 +61,16 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Плагины">
-                <MenuItem Header="Установить новый" />
-                <MenuItem Header="Менеджер плагинов" />
+                <MenuItem Header="Установить новый" Click="AddPluginClick">
+                    <MenuItem.Icon>
+                        <emoji:TextBlock Text="➕" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Менеджер плагинов" Click="PluginsClick">
+                    <MenuItem.Icon>
+                        <emoji:TextBlock Text="🔌" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
                 <MenuItem Header="Настройки" Click="SettingsClick">
                     <MenuItem.Icon>

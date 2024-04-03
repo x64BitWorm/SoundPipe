@@ -45,6 +45,11 @@ namespace SP.Filters.Hub
             return FilterGroupType.Other;
         }
 
+        public Uri GetSourceCodeLink()
+        {
+            return new Uri("https://github.com/x64BitWorm/SoundPipe/tree/main/SoundPipe/SP.Filters.Hub");
+        }
+
         public DynamicParameter[] HotParamaters()
         {
             return Array.Empty<DynamicParameter>();

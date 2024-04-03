@@ -1,10 +1,5 @@
 ﻿using SP.SDK;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SP.Domain
 {
@@ -12,11 +7,13 @@ namespace SP.Domain
     {
         private readonly Logger _logger;
         private readonly Dictionary<string, IFilterEntry> _filterEntries;
+        private readonly Dictionary<string, string> _filtersAssemblies;
 
         public FiltersManager(Logger logger)
         {
             _logger = logger;
             _filterEntries = new Dictionary<string, IFilterEntry>();
+            _filtersAssemblies = new Dictionary<string, string>();
         }
 
         public void LoadFilters(string filtersPath)
@@ -26,12 +23,12 @@ namespace SP.Domain
             {
                 try
                 {
-                    Assembly myDll = Assembly.LoadFrom(filterPath);
-                    foreach(var type in myDll.DefinedTypes.Where(t => t.IsAssignableTo(typeof(IFilterEntry))))
+                    var filters = ReadFilterEntries(filterPath);
+                    foreach (var filter in filters)
                     {
-                        var constructor = type.GetConstructors().First(c => c.GetParameters().Length == 0);
-                        var filter = constructor.Invoke(Array.Empty<object>()) as IFilterEntry;
-                        _filterEntries.Add(filter.FilterName(), filter);
+                        var filterName = filter.FilterName();
+                        _filterEntries.Add(filterName, filter);
+                        _filtersAssemblies.Add(filterName, filterPath);
                     }
                 }
                 catch (Exception ex)
@@ -51,9 +48,24 @@ namespace SP.Domain
             return _filterEntries[name];
         }
 
+        public string GetFilterAssembly(string filterName)
+        {
+            return _filtersAssemblies[filterName];
+        }
+
         public IEnumerable<string> ListAvailableFilters()
         {
             return _filterEntries.Keys;
+        }
+
+        public IEnumerable<IFilterEntry> ReadFilterEntries(string filterPath)
+        {
+            Assembly myDll = Assembly.LoadFrom(filterPath);
+            foreach (var type in myDll.DefinedTypes.Where(t => t.IsAssignableTo(typeof(IFilterEntry))))
+            {
+                var constructor = type.GetConstructors().First(c => c.GetParameters().Length == 0);
+                yield return constructor.Invoke(Array.Empty<object>()) as IFilterEntry;
+            }
         }
     }
 }

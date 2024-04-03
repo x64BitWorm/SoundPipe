@@ -86,6 +86,16 @@ namespace SP.UI
             _viewModel.ShowShemeStats();
         }
 
+        private void AddPluginClick(object sender, RoutedEventArgs e)
+        {
+            _viewModel.AddNewPlugin();
+        }
+
+        private void PluginsClick(object sender, RoutedEventArgs e)
+        {
+            _viewModel.ShowPluginsManager();
+        }
+
         private void SettingsClick(object sender, RoutedEventArgs e)
         {
             _viewModel.ShowSettingsWindow();

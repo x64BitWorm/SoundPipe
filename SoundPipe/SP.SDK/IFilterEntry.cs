@@ -8,6 +8,7 @@ namespace SP.SDK
         public string FilterName();
         public string FilterDescription();
         public int FilterVersion();
+        public Uri GetSourceCodeLink();
 
         public FilterType GetFilterType();
         public FilterGroupType GetGroupType();

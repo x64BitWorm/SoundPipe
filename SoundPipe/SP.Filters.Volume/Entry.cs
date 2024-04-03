@@ -46,6 +46,11 @@ namespace SP.Filters.Volume
             return FilterGroupType.Filter;
         }
 
+        public Uri GetSourceCodeLink()
+        {
+            return new Uri("https://github.com/x64BitWorm/SoundPipe/tree/main/SoundPipe/SP.Filters.Volume");
+        }
+
         public DynamicParameter[] HotParamaters()
         {
             return new DynamicParameter[]

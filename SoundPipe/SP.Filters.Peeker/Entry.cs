@@ -45,6 +45,11 @@ namespace SP.Filters.Peeker
             return FilterGroupType.Filter;
         }
 
+        public Uri GetSourceCodeLink()
+        {
+            return new Uri("https://github.com/x64BitWorm/SoundPipe/tree/main/SoundPipe/SP.Filters.Peeker");
+        }
+
         public DynamicParameter[] HotParamaters()
         {
             return new DynamicParameter[]

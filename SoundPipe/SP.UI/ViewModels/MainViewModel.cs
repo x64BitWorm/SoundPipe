@@ -21,6 +21,8 @@ namespace SP.UI.ViewModels
         private readonly PropertiesViewManager _propertiesViewManager;
         private readonly ShemeManager _shemeManager;
         private readonly IServiceProvider _serviceProvider;
+        private readonly FiltersManager _filtersManager;
+        private readonly FilterUpdateService _filterUpdateService;
 
         private SettingsModel _settingsModel;
         private SynchronizationContext _uiContext;
@@ -86,7 +88,8 @@ namespace SP.UI.ViewModels
 
         public MainViewModel(ShemeProvider shemeProvider, ContextMenuBuilder contextMenuBuilder,
             ShemeGraphConverter shemeGraphConverter, PropertiesViewManager propertiesViewManager,
-            ShemeManager shemeManager, IServiceProvider serviceProvider, SettingsProvider settingsProvider)
+            ShemeManager shemeManager, IServiceProvider serviceProvider, SettingsProvider settingsProvider,
+            FiltersManager filtersManager, FilterUpdateService filterUpdateService)
         {
             _shemeProvider = shemeProvider;
             _contextMenuBuilder = contextMenuBuilder;
@@ -94,6 +97,8 @@ namespace SP.UI.ViewModels
             _propertiesViewManager = propertiesViewManager;
             _shemeManager = shemeManager;
             _serviceProvider = serviceProvider;
+            _filtersManager = filtersManager;
+            _filterUpdateService = filterUpdateService;
             _settingsModel = settingsProvider.Load();
             CreateEmptyShemeMenu();
             StatusBarSend = new StatusBarMessagePipe();

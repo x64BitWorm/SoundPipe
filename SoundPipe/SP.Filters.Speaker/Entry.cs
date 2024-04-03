@@ -45,6 +45,11 @@ namespace SP.Filters.Speaker
             return FilterGroupType.Consumer;
         }
 
+        public Uri GetSourceCodeLink()
+        {
+            return new Uri("https://github.com/x64BitWorm/SoundPipe/tree/main/SoundPipe/SP.Filters.Speaker");
+        }
+
         public DynamicParameter[] HotParamaters()
         {
             return new DynamicParameter[]
