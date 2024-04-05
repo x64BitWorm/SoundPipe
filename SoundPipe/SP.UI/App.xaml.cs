@@ -36,6 +36,7 @@ namespace SP.UI
             services.AddTransient<PluginsViewModel>();
             services.AddTransient<PluginsWindow>();
             services.AddSingleton<ShemeProvider>();
+            services.AddTransient<DocumentationWindow>();
             services.AddSingleton<ContextMenuBuilder>();
             services.AddSingleton<ShemeGraphConverter>();
             services.AddSingleton<PropertiesViewManager>();

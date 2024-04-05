@@ -79,8 +79,22 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Справка">
-                <MenuItem Header="Руководство пользователя" />
-                <MenuItem Header="О приложении" />
+                <MenuItem Header="Руководство пользователя" Click="DocumentationClick">
+                    <MenuItem.Icon>
+                        <emoji:TextBlock Text="📕" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="О приложении" Click="AboutClick">
+                    <MenuItem.Icon>
+                        <emoji:TextBlock Text="ℹ️" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Исходный код" Click="SourceCodeClick">
+                    <MenuItem.Icon>
+                        <emoji:TextBlock Text="💻" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
         <Grid>

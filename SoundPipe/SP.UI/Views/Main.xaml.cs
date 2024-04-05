@@ -101,6 +101,21 @@ namespace SP.UI
             _viewModel.ShowSettingsWindow();
         }
 
+        private void DocumentationClick(object sender, RoutedEventArgs e)
+        {
+            _viewModel.ShowDocumentation();
+        }
+
+        private void AboutClick(object sender, RoutedEventArgs e)
+        {
+            _viewModel.ShowAbout();
+        }
+
+        private void SourceCodeClick(object sender, RoutedEventArgs e)
+        {
+            _viewModel.ShowSourceCode();
+        }
+
         #endregion
 
         private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
