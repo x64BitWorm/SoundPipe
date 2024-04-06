@@ -22,5 +22,13 @@
             Array.ConstrainedCopy(samples, 0, result.samples, 0, samples.Length);
             return result;
         }
+
+        public void ForEachSample(Func<Sample, Sample> view)
+        {
+            for (int i = 0; i < samples.Length; i++)
+            {
+                samples[i] = view(samples[i]);
+            }
+        }
     }
 }
