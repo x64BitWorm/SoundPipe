@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.VolumeLevel", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Hub", "SP.Filters.Hub\SP.Filters.Hub.csproj", "{81D0AA16-2763-4201-9DB9-8534C9869DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.Peeker", "SP.Filters.Peeker\SP.Filters.Peeker.csproj", "{12DE7682-EBFB-4EEB-A474-5583A8024E69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Peeker", "SP.Filters.Peeker\SP.Filters.Peeker.csproj", "{12DE7682-EBFB-4EEB-A474-5583A8024E69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.WaveVisualizer", "SP.Filters.WaveVisualizer\SP.Filters.WaveVisualizer.csproj", "{96A3D946-BAE0-4E8B-A727-9695129D1E12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.WaveVisualizer", "SP.Filters.WaveVisualizer\SP.Filters.WaveVisualizer.csproj", "{96A3D946-BAE0-4E8B-A727-9695129D1E12}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SP.Installer", "SP.Installer\SP.Installer.vdproj", "{BE7DDBE8-35AB-4841-94DF-C47BA0A58C64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,8 @@ Global
 		{96A3D946-BAE0-4E8B-A727-9695129D1E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96A3D946-BAE0-4E8B-A727-9695129D1E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96A3D946-BAE0-4E8B-A727-9695129D1E12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE7DDBE8-35AB-4841-94DF-C47BA0A58C64}.Debug|Any CPU.ActiveCfg = Debug
+		{BE7DDBE8-35AB-4841-94DF-C47BA0A58C64}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
