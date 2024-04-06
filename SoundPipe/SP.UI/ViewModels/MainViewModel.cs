@@ -34,6 +34,7 @@ namespace SP.UI.ViewModels
         private StatusBarMessagePipe _statusBarSend;
         private PropertyType[] _propertyTypes;
         private string _windowTitle;
+        private bool _isShemeReadOnly;
 
         public GraphNode[] ShemeNodes
         {
@@ -85,6 +86,15 @@ namespace SP.UI.ViewModels
             }
         }
 
+        public bool IsShemeReadOnly
+        {
+            get => _isShemeReadOnly;
+            set
+            {
+                _isShemeReadOnly = value;
+                OnPropertyChanged(nameof(IsShemeReadOnly));
+            }
+        }
 
         public MainViewModel(ShemeProvider shemeProvider, ContextMenuBuilder contextMenuBuilder,
             ShemeGraphConverter shemeGraphConverter, PropertiesViewManager propertiesViewManager,

@@ -37,10 +37,12 @@ namespace SP.UI.ViewModels
             }
             StatusBarSend.PushMessage("Сейчас запущена симуляция", Components.StatusBar.StatusMessageType.Run);
             PropertyTypes = new Components.PropertiesStore.PropertyType[0];
+            IsShemeReadOnly = true;
         }
 
         public void StopSheme()
         {
+            IsShemeReadOnly = false;
             if (GetShemeState() != Models.ShemeState.Running)
             {
                 StatusBarSend.PushMessage("Схема не запущена", Components.StatusBar.StatusMessageType.Warning, true);

@@ -9,11 +9,19 @@ namespace SP.UI.ViewModels
     {
         public void DefaultMenuOpening(Point point)
         {
+            if (IsShemeReadOnly)
+            {
+                return;
+            }
             GraphContextMenu = _contextMenuBuilder.CreateDefaultMenu(f => AddNewNode(f, point));
         }
 
         public void NodeMenuOpening(string nodeId)
         {
+            if (IsShemeReadOnly)
+            {
+                return;
+            }
             GraphContextMenu = _contextMenuBuilder.CreateNodeMenu(nodeId, RenameNode, RemoveNode, ChangeBorderNode);
         }
 

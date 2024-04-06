@@ -25,6 +25,10 @@ namespace SP.UI.Components.GraphViewer
             EventManager.RegisterRoutedEvent(nameof(ContextOpening), RoutingStrategy.Bubble, typeof(RoutedEventHandler),
                 typeof(GraphViewer));
 
+        public static readonly DependencyProperty IsReadOnlyProperty =
+            DependencyProperty.Register(nameof(IsReadOnly), typeof(bool), typeof(GraphViewer),
+                new PropertyMetadata(false));
+
         private Bitmap _canvaBitmap;
         private Graphics _canva;
 
@@ -52,6 +56,12 @@ namespace SP.UI.Components.GraphViewer
         {
             add => AddHandler(NodeClickEvent, value);
             remove => RemoveHandler(NodeClickEvent, value);
+        }
+
+        public bool IsReadOnly
+        {
+            get => (bool)GetValue(IsReadOnlyProperty);
+            set => SetValue(IsReadOnlyProperty, value);
         }
 
         public GraphViewer()

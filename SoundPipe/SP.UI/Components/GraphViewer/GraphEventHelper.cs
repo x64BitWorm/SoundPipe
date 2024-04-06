@@ -24,6 +24,10 @@ namespace SP.UI.Components.GraphViewer
                     _viewOrigin = GeomUtils.Sub(_state.Context.Position, point);
                     break;
                 case StateType.ClickNode:
+                    if (IsReadOnly)
+                    {
+                        return;
+                    }
                     _state.State = StateType.MoveNode;
                     break;
                 case StateType.MoveNode:
@@ -61,6 +65,10 @@ namespace SP.UI.Components.GraphViewer
                     }
                     else if (collision is JointCollision jointCollision)
                     {
+                        if (IsReadOnly)
+                        {
+                            return;
+                        }
                         var node = jointCollision.Container.Node;
                         var nodeJoint = new NodeJoint()
                         {

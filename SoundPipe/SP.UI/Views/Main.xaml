@@ -110,7 +110,8 @@
                                     Nodes="{Binding ShemeNodes}" 
                                     NodeClick="GraphViewerNodeClick"
                                     ContextOpening="GraphViewerContextOpening"
-                                    ContextMenu="{Binding GraphContextMenu}">
+                                    ContextMenu="{Binding GraphContextMenu}"
+                                    IsReadOnly="{Binding IsShemeReadOnly}">
                 </componentGraphViewer:GraphViewer>
             </DockPanel>
             <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
