@@ -13,7 +13,7 @@ namespace SP.UI.Components.GraphViewer
         private static Color Background = Color.White;
         private static Color GridDotColor = Color.LightSlateGray;
         private static Color NodeLinkColor = Color.Black;
-        private static Brush NodeFillColor = Brushes.LightGray;
+        private static Brush NodeFillColor = Brushes.Gainsboro;
         private static Color NodeDefaultBorder = Color.Black;
         private static Color FontColor = Color.Black;
 

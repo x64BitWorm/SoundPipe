@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace SP.UI.Services
 {
@@ -49,7 +51,8 @@ namespace SP.UI.Services
             return result;
         }
 
-        public ContextMenu CreateNodeMenu(string nodeId, Action<string> renameNodeAction, Action<string> removeNodeAction)
+        public ContextMenu CreateNodeMenu(string nodeId, Action<string> renameNodeAction, Action<string> removeNodeAction,
+            Action<string, Color> changeBorderNodeAction)
         {
             var result = new ContextMenu();
             var items = new List<MenuItem>();
@@ -59,6 +62,11 @@ namespace SP.UI.Services
             };
             menuItem.Click += (s, e) => renameNodeAction(nodeId);
             items.Add(menuItem);
+            items.Add(new MenuItem()
+            {
+                Header = "Цвет кромки",
+                ItemsSource = GetColorsItems((brush) => changeBorderNodeAction(nodeId, brush))
+            });
             menuItem = new MenuItem()
             {
                 Header = "Удалить",
@@ -76,6 +84,37 @@ namespace SP.UI.Services
             yield return ("Фильтр", FilterGroupType.Filter);
             yield return ("Анализатор", FilterGroupType.Analyzer);
             yield return ("Прочее", FilterGroupType.Other);
+        }
+
+        private IEnumerable<MenuItem> GetColorsItems(Action<Color> changeBorderNodeAction)
+        {
+            var colors = new (string Name, Color Color)[]
+            {
+                new("Черный", Colors.Black),
+                new("Серый", Colors.Gray),
+                new("Желтый", Colors.Yellow),
+                new("Красный", Colors.Red),
+                new("Оранжевый", Colors.Orange),
+                new("Зеленый", Colors.Green),
+                new("Лайм", Colors.Lime),
+                new("Синий", Colors.Blue),
+                new("Голубой", Colors.SkyBlue),
+                new("Фиолетовый", Colors.Violet),
+            };
+            foreach (var color in colors)
+            {
+                var menuItem = new MenuItem()
+                {
+                    Header = color.Name,
+                    Tag = color.Color,
+                    Icon = new Ellipse()
+                    {
+                        Fill = new SolidColorBrush(color.Color)
+                    }
+                };
+                menuItem.Click += (s, e) => changeBorderNodeAction((Color)(s as MenuItem).Tag);
+                yield return menuItem;
+            }
         }
     }
 }

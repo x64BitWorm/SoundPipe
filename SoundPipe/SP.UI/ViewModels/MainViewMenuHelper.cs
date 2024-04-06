@@ -1,18 +1,20 @@
-﻿using SP.UI.Views;
+﻿using SP.UI.Utils;
+using SP.UI.Views;
 using System;
+using System.Drawing;
 
 namespace SP.UI.ViewModels
 {
     partial class MainViewModel
     {
-        public void DefaultMenuOpening(System.Drawing.Point point)
+        public void DefaultMenuOpening(Point point)
         {
             GraphContextMenu = _contextMenuBuilder.CreateDefaultMenu(f => AddNewNode(f, point));
         }
 
         public void NodeMenuOpening(string nodeId)
         {
-            GraphContextMenu = _contextMenuBuilder.CreateNodeMenu(nodeId, RenameNode, RemoveNode);
+            GraphContextMenu = _contextMenuBuilder.CreateNodeMenu(nodeId, RenameNode, RemoveNode, ChangeBorderNode);
         }
 
         private void RenameNode(string nodeId)
@@ -32,7 +34,14 @@ namespace SP.UI.ViewModels
             NotifyShemeModified();
         }
 
-        private void AddNewNode(string filterName, System.Drawing.Point point)
+        private void ChangeBorderNode(string nodeId, System.Windows.Media.Color borderColor)
+        {
+            SyncUiGraphToGraphConstructor();
+            _shemeConstructor[nodeId].MetaInfo.Color = WpfUtils.ColorToString(WpfUtils.DrawingColorFromMediaColor(borderColor));
+            SyncGraphConstructorToUiGraph();
+        }
+
+        private void AddNewNode(string filterName, Point point)
         {
             SyncUiGraphToGraphConstructor();
             _shemeConstructor.AddFilter(Guid.NewGuid().ToString(), filterName, new Models.UINodeInfo()
