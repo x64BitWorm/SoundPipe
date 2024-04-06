@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SP.Domain\SP.Domain.csproj" />
-    <ProjectReference Include="..\SP.Filters.Speaker\SP.Filters.Speaker.csproj" />
   </ItemGroup>
 
 </Project>
