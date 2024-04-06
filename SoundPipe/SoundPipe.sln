@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.WaveVisualizer",
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SP.Installer", "SP.Installer\SP.Installer.vdproj", "{BE7DDBE8-35AB-4841-94DF-C47BA0A58C64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.Add", "SP.Filters.Add\SP.Filters.Add.csproj", "{26204F1E-9C2F-46FE-A1E7-2DF4A4A3F1B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{96A3D946-BAE0-4E8B-A727-9695129D1E12}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE7DDBE8-35AB-4841-94DF-C47BA0A58C64}.Debug|Any CPU.ActiveCfg = Debug
 		{BE7DDBE8-35AB-4841-94DF-C47BA0A58C64}.Release|Any CPU.ActiveCfg = Release
+		{26204F1E-9C2F-46FE-A1E7-2DF4A4A3F1B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26204F1E-9C2F-46FE-A1E7-2DF4A4A3F1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26204F1E-9C2F-46FE-A1E7-2DF4A4A3F1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26204F1E-9C2F-46FE-A1E7-2DF4A4A3F1B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{81D0AA16-2763-4201-9DB9-8534C9869DF3} = {082EEC55-0C97-484E-9B1D-6992473298D2}
 		{12DE7682-EBFB-4EEB-A474-5583A8024E69} = {082EEC55-0C97-484E-9B1D-6992473298D2}
 		{96A3D946-BAE0-4E8B-A727-9695129D1E12} = {082EEC55-0C97-484E-9B1D-6992473298D2}
+		{26204F1E-9C2F-46FE-A1E7-2DF4A4A3F1B3} = {082EEC55-0C97-484E-9B1D-6992473298D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49533FDE-3305-4E51-917A-98B409F61AE0}

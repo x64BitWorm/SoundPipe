@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SP.SDK.Primitives
+﻿namespace SP.SDK.Primitives
 {
     public struct Sample
     {
@@ -30,6 +24,11 @@ namespace SP.SDK.Primitives
         public static Sample From16Bit(Span<byte> pointer)
         {
             return new Sample((short)(pointer[0] | pointer[1] << 8) / 32768.0f, (short)(pointer[2] | pointer[3] << 8) / 32768.0f);
+        }
+
+        public static Sample operator +(Sample sample1, Sample sample2)
+        {
+            return new Sample(sample1.left + sample2.left, sample1.right + sample2.right);
         }
     }
 }

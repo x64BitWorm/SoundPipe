@@ -11,6 +11,7 @@ namespace SP.UI.ViewModels
         {
             if (IsShemeReadOnly)
             {
+                GraphContextMenu = null;
                 return;
             }
             GraphContextMenu = _contextMenuBuilder.CreateDefaultMenu(f => AddNewNode(f, point));
@@ -20,6 +21,7 @@ namespace SP.UI.ViewModels
         {
             if (IsShemeReadOnly)
             {
+                GraphContextMenu = null;
                 return;
             }
             GraphContextMenu = _contextMenuBuilder.CreateNodeMenu(nodeId, RenameNode, RemoveNode, ChangeBorderNode);
