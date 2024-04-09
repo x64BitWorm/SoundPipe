@@ -23,7 +23,7 @@ namespace SP.UI.Components.PropertiesStore.Types
         {
             if (value is int)
             {
-                value = (int)(double)value;
+                value = (int)value;
             }
             Current = (int)value;
         }

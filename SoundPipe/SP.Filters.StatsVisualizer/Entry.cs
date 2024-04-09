@@ -58,6 +58,8 @@ namespace SP.Filters.StatsVisualizer
                 HotParameterType.ReadOnly),
                 new DynamicParameter("samplesSpeed", "Скорость прохождения семплов", new DynamicStringType(25),
                 HotParameterType.ReadOnly),
+                new DynamicParameter("requestsPerSecond", "Количество запросов в секунду", new DynamicStringType(25),
+                HotParameterType.ReadOnly),
             };
         }
     }

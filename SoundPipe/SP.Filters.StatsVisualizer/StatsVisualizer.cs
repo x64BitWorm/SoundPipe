@@ -8,6 +8,8 @@ namespace SP.Filters.StatsVisualizer
         private ISoundProvider _provider;
         private int _totalSamples;
         private int _samplesSpeed;
+        private int _requestsPerSecond;
+        private int _currentRequestsPerSecond;
         private int[] _lastTotalSamples;
         private Thread _updater;
 
@@ -16,6 +18,8 @@ namespace SP.Filters.StatsVisualizer
             _provider = args[0] as ISoundProvider ?? throw new ArgumentException("Arg1: SoundProvider expected");
             _totalSamples = 0;
             _samplesSpeed = 0;
+            _requestsPerSecond = 0;
+            _currentRequestsPerSecond = 0;
             _lastTotalSamples = new int[4];
             _updater = new Thread((e) => UpdateMetrics());
             _updater.Start();
@@ -25,6 +29,7 @@ namespace SP.Filters.StatsVisualizer
         {
             var samples = _provider.ReadPart(length);
             _totalSamples += samples.Length;
+            _currentRequestsPerSecond++;
             return samples;
         }
 
@@ -41,6 +46,8 @@ namespace SP.Filters.StatsVisualizer
                     return WithGroups(_totalSamples);
                 case "samplesSpeed":
                     return WithGroups(_samplesSpeed);
+                case "requestsPerSecond":
+                    return WithGroups(_requestsPerSecond);
                 default:
                     throw new InvalidOperationException($"Invalid parameter '{key}'. Only 'totalSamples,samplesSpeed' is supported");
             }
@@ -66,6 +73,8 @@ namespace SP.Filters.StatsVisualizer
                     speed += _lastTotalSamples[i + 1] - _lastTotalSamples[i];
                 }
                 _samplesSpeed = speed / (_lastTotalSamples.Length - 1);
+                _requestsPerSecond = _currentRequestsPerSecond;
+                _currentRequestsPerSecond = 0;
                 try
                 {
                     Thread.Sleep(1000);
