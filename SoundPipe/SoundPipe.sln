@@ -45,9 +45,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Skip", "SP.Filte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.FurieVisualizer", "SP.Filters.FurieVisualizer\SP.Filters.FurieVisualizer.csproj", "{484C1F2C-476A-401A-ADAD-767AE70E69C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.SinGenerator", "SP.Filters.SinGenerator\SP.Filters.SinGenerator.csproj", "{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.SinGenerator", "SP.Filters.SinGenerator\SP.Filters.SinGenerator.csproj", "{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.SaveToFile", "SP.Filters.SaveToFile\SP.Filters.SaveToFile.csproj", "{11F2CD3C-7D3C-4C50-B16D-E40F0F074A89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.SaveToFile", "SP.Filters.SaveToFile\SP.Filters.SaveToFile.csproj", "{11F2CD3C-7D3C-4C50-B16D-E40F0F074A89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.Silent", "SP.Filters.Silent\SP.Filters.Silent.csproj", "{C4CB2BC0-93E0-496C-BFAE-B34EFC9AAF0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{11F2CD3C-7D3C-4C50-B16D-E40F0F074A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11F2CD3C-7D3C-4C50-B16D-E40F0F074A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11F2CD3C-7D3C-4C50-B16D-E40F0F074A89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4CB2BC0-93E0-496C-BFAE-B34EFC9AAF0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4CB2BC0-93E0-496C-BFAE-B34EFC9AAF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4CB2BC0-93E0-496C-BFAE-B34EFC9AAF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4CB2BC0-93E0-496C-BFAE-B34EFC9AAF0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +169,7 @@ Global
 		{484C1F2C-476A-401A-ADAD-767AE70E69C4} = {082EEC55-0C97-484E-9B1D-6992473298D2}
 		{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A} = {082EEC55-0C97-484E-9B1D-6992473298D2}
 		{11F2CD3C-7D3C-4C50-B16D-E40F0F074A89} = {082EEC55-0C97-484E-9B1D-6992473298D2}
+		{C4CB2BC0-93E0-496C-BFAE-B34EFC9AAF0B} = {082EEC55-0C97-484E-9B1D-6992473298D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49533FDE-3305-4E51-917A-98B409F61AE0}

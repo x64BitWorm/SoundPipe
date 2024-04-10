@@ -36,6 +36,9 @@ namespace SP.Filters.Add
                 case ModeEnum.Div2:
                     Processors.ProcessDiv2(result, samples1, samples2);
                     break;
+                case ModeEnum.Diff:
+                    Processors.ProcessDiff(result, samples1, samples2);
+                    break;
             }
             return result;
         }
@@ -60,6 +63,7 @@ namespace SP.Filters.Add
             return mode switch
             {
                 "div2" => ModeEnum.Div2,
+                "diff" => ModeEnum.Diff,
                 _ => ModeEnum.Add,
             };
         }

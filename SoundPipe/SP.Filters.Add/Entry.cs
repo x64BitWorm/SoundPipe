@@ -19,7 +19,7 @@ namespace SP.Filters.Add
                 new DynamicParameter("input1", "Входной поток 1", new DynamicStreamType()),
                 new DynamicParameter("input2", "Входной поток 2", new DynamicStreamType()),
                 new DynamicParameter("mode", "Режим сложения",
-                new DynamicEnumType(new string[] { "add", "div2" }), "add")
+                new DynamicEnumType(new string[] { "add", "div2", "diff" }), "add")
             };
         }
 

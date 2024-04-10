@@ -19,5 +19,13 @@ namespace SP.Filters.Add
                 result[i] = (samples1[i] + samples2[i]) * 0.5f;
             }
         }
+
+        public static void ProcessDiff(SoundData result, SoundData samples1, SoundData samples2)
+        {
+            for (var i = 0; i < result.Length; i++)
+            {
+                result[i] = samples1[i] - samples2[i];
+            }
+        }
     }
 }

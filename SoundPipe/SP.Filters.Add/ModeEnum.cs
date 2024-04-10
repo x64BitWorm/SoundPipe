@@ -3,6 +3,7 @@
     public enum ModeEnum
     {
         Add,
-        Div2
+        Div2,
+        Diff
     }
 }
