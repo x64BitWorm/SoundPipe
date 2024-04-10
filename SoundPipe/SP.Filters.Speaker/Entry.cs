@@ -22,7 +22,7 @@ namespace SP.Filters.Speaker
 
         public string FilterDescription()
         {
-            return "Модуль вывода звукового потока на динамик устройства";
+            return "Модуль вывода звукового потока на динамик устройства (дискретизация - 44100)";
         }
 
         public string FilterName()

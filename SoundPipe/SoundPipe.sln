@@ -37,13 +37,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Speed", "SP.Filt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.LowPass", "SP.Filters.LowPass\SP.Filters.LowPass.csproj", "{D5738708-20F7-42D8-9E86-10BB65BF7EC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.StatsVisualizer", "SP.Filters.StatsVisualizer\SP.Filters.StatsVisualizer.csproj", "{0165CC42-FC0D-4886-9B8D-600CE8B0402D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.StatsVisualizer", "SP.Filters.StatsVisualizer\SP.Filters.StatsVisualizer.csproj", "{0165CC42-FC0D-4886-9B8D-600CE8B0402D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.ChunkCut", "SP.Filters.ChunkCut\SP.Filters.ChunkCut.csproj", "{D490F87A-65FD-4F6F-B579-A34D2F75F37D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.ChunkCut", "SP.Filters.ChunkCut\SP.Filters.ChunkCut.csproj", "{D490F87A-65FD-4F6F-B579-A34D2F75F37D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.Skip", "SP.Filters.Skip\SP.Filters.Skip.csproj", "{371D4102-DDB0-40AE-A303-056ADDF72D80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Skip", "SP.Filters.Skip\SP.Filters.Skip.csproj", "{371D4102-DDB0-40AE-A303-056ADDF72D80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.FurieVisualizer", "SP.Filters.FurieVisualizer\SP.Filters.FurieVisualizer.csproj", "{484C1F2C-476A-401A-ADAD-767AE70E69C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.FurieVisualizer", "SP.Filters.FurieVisualizer\SP.Filters.FurieVisualizer.csproj", "{484C1F2C-476A-401A-ADAD-767AE70E69C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.SinGenerator", "SP.Filters.SinGenerator\SP.Filters.SinGenerator.csproj", "{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +131,10 @@ Global
 		{484C1F2C-476A-401A-ADAD-767AE70E69C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{484C1F2C-476A-401A-ADAD-767AE70E69C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{484C1F2C-476A-401A-ADAD-767AE70E69C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,6 +155,7 @@ Global
 		{D490F87A-65FD-4F6F-B579-A34D2F75F37D} = {082EEC55-0C97-484E-9B1D-6992473298D2}
 		{371D4102-DDB0-40AE-A303-056ADDF72D80} = {082EEC55-0C97-484E-9B1D-6992473298D2}
 		{484C1F2C-476A-401A-ADAD-767AE70E69C4} = {082EEC55-0C97-484E-9B1D-6992473298D2}
+		{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A} = {082EEC55-0C97-484E-9B1D-6992473298D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49533FDE-3305-4E51-917A-98B409F61AE0}
