@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Linq;
 
 namespace SP.UI.Services
 {
@@ -19,6 +21,7 @@ namespace SP.UI.Services
 
         public void UpdateFilters()
         {
+            CheckDefaultFilters();
             var updates = Directory.EnumerateFiles(_filtersUpdatePath, "*.dll");
             foreach (var update in updates)
             {
@@ -58,6 +61,16 @@ namespace SP.UI.Services
         {
             var deletionFile = Path.Combine(_filtersUpdatePath, pluginName + ".delete");
             File.Create(deletionFile);
+        }
+
+        private void CheckDefaultFilters()
+        {
+            var zipFolder = "x64BitWorm\\SoundPipe\\SP.Filters.zip";
+            var zipPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), zipFolder);
+            if (File.Exists(zipPath) && !Directory.EnumerateFiles(_filtersPath).Any())
+            {
+                System.IO.Compression.ZipFile.ExtractToDirectory(zipPath, _filtersPath, true);
+            }
         }
     }
 }
