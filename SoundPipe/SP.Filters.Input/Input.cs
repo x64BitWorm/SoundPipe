@@ -15,7 +15,7 @@ namespace SP.Filters.Input
         {
             _fileName = args[0] as string ?? throw new ArgumentException("Arg1: FileName expected");
             _fileStream = new FileStream(_fileName, FileMode.Open);
-            _waveProvider = new RawSourceWaveStream(_fileStream, new WaveFormat());
+            InitializeProvider();
             _buffer = Array.Empty<byte>();
         }
 
@@ -48,6 +48,19 @@ namespace SP.Filters.Input
         public void Destroy()
         {
             _fileStream.Dispose();
+        }
+
+        private void InitializeProvider()
+        {
+            if (_fileName.EndsWith(".mp3"))
+            {
+                _waveProvider = new Mp3FileReader(_fileStream)
+                    .ToSampleProvider().ToWaveProvider16();
+            }
+            else
+            {
+                _waveProvider = new RawSourceWaveStream(_fileStream, new WaveFormat());
+            }
         }
     }
 }

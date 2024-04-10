@@ -40,5 +40,10 @@
         {
             return new Sample(sample.left * scalar, sample.right * scalar);
         }
+
+        public static Sample operator *(Sample sample1, Sample sample2)
+        {
+            return new Sample(sample1.left * sample2.left, sample1.right * sample2.right);
+        }
     }
 }

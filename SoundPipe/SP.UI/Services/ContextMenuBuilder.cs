@@ -83,6 +83,7 @@ namespace SP.UI.Services
             yield return ("Потребитель", FilterGroupType.Consumer);
             yield return ("Фильтр", FilterGroupType.Filter);
             yield return ("Анализатор", FilterGroupType.Analyzer);
+            yield return ("Логика", FilterGroupType.Logic);
             yield return ("Прочее", FilterGroupType.Other);
         }
 

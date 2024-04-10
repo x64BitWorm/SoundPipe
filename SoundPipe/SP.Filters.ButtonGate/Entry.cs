@@ -3,31 +3,28 @@ using SP.SDK.Models;
 using SP.SDK.Primitives;
 using SP.SDK.Primitives.Types;
 
-namespace SP.Filters.Input
+namespace SP.Filters.ButtonGate
 {
     public class Entry : IFilterEntry
     {
         public ISoundFilter ConstructFilter()
         {
-            return new Input();
+            return new ButtonGate();
         }
 
         public DynamicParameter[] ConstructorParamaters()
         {
-            return new DynamicParameter[]
-            {
-                new DynamicParameter("fileName", "Имя входного файла", new DynamicStringType(256))
-            };
+            return Array.Empty<DynamicParameter>();
         }
 
         public string FilterDescription()
         {
-            return "Фильтр представляющий входной поток из WAV/MP3 файла";
+            return "Сигнализатор о нажатии кнопки";
         }
 
         public string FilterName()
         {
-            return "Input";
+            return "ButtonGate";
         }
 
         public int FilterVersion()
@@ -42,17 +39,21 @@ namespace SP.Filters.Input
 
         public FilterGroupType GetGroupType()
         {
-            return FilterGroupType.Input;
+            return FilterGroupType.Logic;
         }
 
         public Uri GetSourceCodeLink()
         {
-            return new Uri("https://github.com/x64BitWorm/SoundPipe/tree/main/SoundPipe/SP.Filters.Input");
+            return new Uri("https://github.com/x64BitWorm/SoundPipe/tree/main/SoundPipe/SP.Filters.ButtonGate");
         }
 
         public DynamicParameter[] HotParamaters()
         {
-            return Array.Empty<DynamicParameter>();
+            return new DynamicParameter[]
+            {
+                new DynamicParameter("peek", "Нажатие кнопки", new DynamicActionType("Сигнал"),
+                HotParameterType.WriteOnly)
+            };
         }
     }
 }

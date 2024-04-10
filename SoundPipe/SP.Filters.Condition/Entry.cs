@@ -3,31 +3,33 @@ using SP.SDK.Models;
 using SP.SDK.Primitives;
 using SP.SDK.Primitives.Types;
 
-namespace SP.Filters.Input
+namespace SP.Filters.Condition
 {
     public class Entry : IFilterEntry
     {
         public ISoundFilter ConstructFilter()
         {
-            return new Input();
+            return new Condition();
         }
 
         public DynamicParameter[] ConstructorParamaters()
         {
             return new DynamicParameter[]
             {
-                new DynamicParameter("fileName", "Имя входного файла", new DynamicStringType(256))
+                new DynamicParameter("condition", "Входной поток условия", new DynamicStreamType()),
+                new DynamicParameter("inputIf", "Входной поток при соблюдении условия", new DynamicStreamType()),
+                new DynamicParameter("inputElse", "Входной поток при несоблюдении условия", new DynamicStreamType()),
             };
         }
 
         public string FilterDescription()
         {
-            return "Фильтр представляющий входной поток из WAV/MP3 файла";
+            return "Фильтр условного входного потока";
         }
 
         public string FilterName()
         {
-            return "Input";
+            return "Condition";
         }
 
         public int FilterVersion()
@@ -42,12 +44,12 @@ namespace SP.Filters.Input
 
         public FilterGroupType GetGroupType()
         {
-            return FilterGroupType.Input;
+            return FilterGroupType.Logic;
         }
 
         public Uri GetSourceCodeLink()
         {
-            return new Uri("https://github.com/x64BitWorm/SoundPipe/tree/main/SoundPipe/SP.Filters.Input");
+            return new Uri("https://github.com/x64BitWorm/SoundPipe/tree/main/SoundPipe/SP.Filters.Condition");
         }
 
         public DynamicParameter[] HotParamaters()

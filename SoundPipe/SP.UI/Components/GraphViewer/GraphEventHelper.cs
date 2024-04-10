@@ -155,7 +155,7 @@ namespace SP.UI.Components.GraphViewer
 
         private void ContextOpeningInvoke(GraphNode node)
         {
-            var args = new object[] { node == null ? string.Empty : node.Id, _lastMousePosition };
+            var args = new object[] { node == null ? string.Empty : node.Id, GeomUtils.Add(_lastMousePosition, _viewOrigin) };
             var newEvent = new ParametrizedRoutedEventArgs(ContextOpeningEvent, this, args);
             RaiseEvent(newEvent);
         }

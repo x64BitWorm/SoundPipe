@@ -6,6 +6,7 @@
         Consumer = 2,
         Filter = 3,
         Analyzer = 4,
-        Other = 5
+        Other = 5,
+        Logic = 6
     }
 }
