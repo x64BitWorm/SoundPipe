@@ -91,7 +91,7 @@ namespace SP.UI.ViewModels
             {
                 var content = File.ReadAllText(fileName);
                 StopPipeSheme();
-                _shemeConstructor = _shemeManager.ReadShemeConstructor<UINodeInfo>(content);
+                _shemeConstructor = _shemeManager.ReadShemeConstructor<UINodeInfo>(content, _settingsModel.LoadShemeWithOldFilters);
                 SyncGraphConstructorToUiGraph();
                 StatusBarSend.PushMessage("Схема загружена", Components.StatusBar.StatusMessageType.Success, true);
                 _openedFileName = fileName;

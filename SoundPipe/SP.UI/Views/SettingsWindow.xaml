@@ -47,6 +47,10 @@
                 <TextBox Text="{Binding SettingsModel.ParameterRefreshRate}" PreviewTextInput="NumberValidationTextBox" />
             </StackPanel>
             <StackPanel>
+                <CheckBox Content="Загружать схемы с фильтрами старых версий" 
+                          IsChecked="{Binding SettingsModel.LoadShemeWithOldFilters}" />
+            </StackPanel>
+            <StackPanel>
                 <emoji:TextBlock>
                     <LineBreak/>
                     ⚠️ Некоторые изменения могут потребовать перезапуска приложения

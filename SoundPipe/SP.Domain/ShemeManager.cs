@@ -40,7 +40,7 @@ namespace SP.Domain
             return new PipeSheme(result);
         }
 
-        public ShemeConstructor<T> ReadShemeConstructor<T>(string shemeJson)
+        public ShemeConstructor<T> ReadShemeConstructor<T>(string shemeJson, bool allowOldVersion = false)
         {
             var result = new ShemeConstructor<T>(_filtersManager);
             var filters = JsonConvert.DeserializeObject<FilterNodeJson<T>[]>(shemeJson);
@@ -60,13 +60,37 @@ namespace SP.Domain
                 var filter = result[filterId];
                 var parametersInfo = filter.Entry.ConstructorParamaters();
                 var parametersValues = filters.First(f => f.Filter.Id == filterId).Filter.Parameters;
-                if (parametersInfo.Length != parametersValues.Length)
+                try
                 {
-                    throw new InvalidOperationException($"Wrong parameters length for '{filterId}' filter");
+                    if (parametersInfo.Length != parametersValues.Length)
+                    {
+                        throw new InitializeFilterException($"Wrong parameters length for '{filterId}' filter");
+                    }
+                    try
+                    {
+                        for (int i = 0; i < parametersInfo.Length; i++)
+                        {
+                            filter.Parameters[i] = parametersInfo[i].Type.FromString(parametersValues[i]);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        throw new InitializeFilterException($"Cannot initialize parameter in '{filterId}'", e);
+                    }
                 }
-                for (int i = 0; i < parametersInfo.Length; i++)
+                catch (InitializeFilterException e)
                 {
-                    filter.Parameters[i] = parametersInfo[i].Type.FromString(parametersValues[i]);
+                    if (allowOldVersion)
+                    {
+                        for (int i = 0; i < parametersInfo.Length; i++)
+                        {
+                            filter.Parameters[i] = parametersInfo[i].DefaultValue;
+                        }
+                    }
+                    else
+                    {
+                        throw e;
+                    }
                 }
             }
             return result;

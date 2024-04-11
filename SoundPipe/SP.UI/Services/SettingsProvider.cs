@@ -60,7 +60,8 @@ namespace SP.UI.Services
             return new SettingsModel()
             {
                 FiltersPath = Path.Combine(_appFolder, "Filters"),
-                ParameterRefreshRate = 100
+                ParameterRefreshRate = 100,
+                LoadShemeWithOldFilters = false
             };
         }
     }
