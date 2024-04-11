@@ -1,0 +1,64 @@
+[
+  {
+    "Filter": {
+      "Id": "72f6cd98-0fec-4722-94da-1b27e0939499",
+      "Type": "Input",
+      "Parameters": [
+        "C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\22gzCashApp.wav"
+      ]
+    },
+    "Meta": {
+      "X": 164,
+      "Y": 267,
+      "Label": "Input",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "add2dd1f-470e-4655-a108-550df486668c",
+      "Type": "Input",
+      "Parameters": [
+        "C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\bwhite11.wav"
+      ]
+    },
+    "Meta": {
+      "X": 162,
+      "Y": 373,
+      "Label": "Input",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "4997d183-7c7a-4760-a47c-ec57983c7311",
+      "Type": "Add",
+      "Parameters": [
+        "72f6cd98-0fec-4722-94da-1b27e0939499",
+        "add2dd1f-470e-4655-a108-550df486668c",
+        "add"
+      ]
+    },
+    "Meta": {
+      "X": 354,
+      "Y": 324,
+      "Label": "Add",
+      "Color": "#FFFFA500"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "2aef2a76-af5a-40f7-a77c-bbc4f4245f2c",
+      "Type": "Speaker",
+      "Parameters": [
+        "4997d183-7c7a-4760-a47c-ec57983c7311"
+      ]
+    },
+    "Meta": {
+      "X": 534,
+      "Y": 325,
+      "Label": "Speaker",
+      "Color": "#FF000000"
+    }
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "Filter": {
+      "Id": "7302be41-fda8-4f65-92f1-cda771b9a319",
+      "Type": "LowPass",
+      "Parameters": [
+        "e133e188-e84f-4152-a0af-5a5fe2c362db",
+        "0,79601336"
+      ]
+    },
+    "Meta": {
+      "X": 363,
+      "Y": 197,
+      "Label": "LowPass",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "4d5327c8-156b-4d52-a24d-576edc5ded4f",
+      "Type": "Input",
+      "Parameters": [
+        "C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\22gzCashApp.wav"
+      ]
+    },
+    "Meta": {
+      "X": -109,
+      "Y": 278,
+      "Label": "Input",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "58c3e3e1-7376-42e5-a98b-82e98531ff68",
+      "Type": "Speaker",
+      "Parameters": [
+        "1cd8bac8-3e7f-4eb4-9526-915442e66305"
+      ]
+    },
+    "Meta": {
+      "X": 822,
+      "Y": 274,
+      "Label": "Speaker",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "e133e188-e84f-4152-a0af-5a5fe2c362db",
+      "Type": "Hub",
+      "Parameters": [
+        "82f1bb80-7f0c-4b1d-a309-32eef0ba37fd"
+      ]
+    },
+    "Meta": {
+      "X": 206,
+      "Y": 275,
+      "Label": "Hub",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "1cd8bac8-3e7f-4eb4-9526-915442e66305",
+      "Type": "Add",
+      "Parameters": [
+        "e133e188-e84f-4152-a0af-5a5fe2c362db",
+        "81537e39-3bd2-442a-ac48-02e2d99e913f",
+        "div2"
+      ]
+    },
+    "Meta": {
+      "X": 664,
+      "Y": 274,
+      "Label": "Add",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "81537e39-3bd2-442a-ac48-02e2d99e913f",
+      "Type": "Volume",
+      "Parameters": [
+        "7302be41-fda8-4f65-92f1-cda771b9a319",
+        "2,0121422"
+      ]
+    },
+    "Meta": {
+      "X": 514,
+      "Y": 197,
+      "Label": "Volume",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "82f1bb80-7f0c-4b1d-a309-32eef0ba37fd",
+      "Type": "Volume",
+      "Parameters": [
+        "4d5327c8-156b-4d52-a24d-576edc5ded4f",
+        "0,5004336"
+      ]
+    },
+    "Meta": {
+      "X": 49,
+      "Y": 278,
+      "Label": "Volume",
+      "Color": "#FF000000"
+    }
+  }
+]

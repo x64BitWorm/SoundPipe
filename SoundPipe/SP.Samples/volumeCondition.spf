@@ -1,0 +1,113 @@
+[
+  {
+    "Filter": {
+      "Id": "49de8b0f-a025-425e-8768-f32140994faa",
+      "Type": "Input",
+      "Parameters": [
+        "C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\22gzCashApp.wav"
+      ]
+    },
+    "Meta": {
+      "X": -50,
+      "Y": 313,
+      "Label": "Input",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "dbbcbca4-17e6-4f00-834a-0a092aea002e",
+      "Type": "Hub",
+      "Parameters": [
+        "b4cb12a0-690e-46d1-9349-39dc505e0a55"
+      ]
+    },
+    "Meta": {
+      "X": 249,
+      "Y": 314,
+      "Label": "Hub",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "1924d814-0765-4fd7-8af5-f0f920c80282",
+      "Type": "VolumeGate",
+      "Parameters": [
+        "dbbcbca4-17e6-4f00-834a-0a092aea002e",
+        "0,49686566"
+      ]
+    },
+    "Meta": {
+      "X": 418,
+      "Y": 228,
+      "Label": "VolumeGate",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "3441e9de-9762-496f-b525-1a0e1d3097fb",
+      "Type": "Condition",
+      "Parameters": [
+        "1924d814-0765-4fd7-8af5-f0f920c80282",
+        "13d6c541-90cc-495a-bb79-e26942e54f78",
+        "dbbcbca4-17e6-4f00-834a-0a092aea002e"
+      ]
+    },
+    "Meta": {
+      "X": 577,
+      "Y": 300,
+      "Label": "Condition",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "13d6c541-90cc-495a-bb79-e26942e54f78",
+      "Type": "SinGenerator",
+      "Parameters": [
+        "44100",
+        "200",
+        "0,5"
+      ]
+    },
+    "Meta": {
+      "X": 414,
+      "Y": 387,
+      "Label": "SinGenerator",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "ddd28642-c23c-4eab-abc6-b6a605a87125",
+      "Type": "Speaker",
+      "Parameters": [
+        "3441e9de-9762-496f-b525-1a0e1d3097fb"
+      ]
+    },
+    "Meta": {
+      "X": 725,
+      "Y": 300,
+      "Label": "Speaker",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "b4cb12a0-690e-46d1-9349-39dc505e0a55",
+      "Type": "Skip",
+      "Parameters": [
+        "49de8b0f-a025-425e-8768-f32140994faa",
+        "1000000"
+      ]
+    },
+    "Meta": {
+      "X": 99,
+      "Y": 314,
+      "Label": "Skip",
+      "Color": "#FF000000"
+    }
+  }
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "Filter": {
+      "Id": "62c4bea2-f635-4afc-ba6a-88743c078207",
+      "Type": "Input",
+      "Parameters": [
+        "C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\22gzCashApp.wav"
+      ]
+    },
+    "Meta": {
+      "X": 127,
+      "Y": 188,
+      "Label": "Input",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "d4ec6b49-f30f-43ed-9b52-a0b3a35018a8",
+      "Type": "Speaker",
+      "Parameters": [
+        "af1d6b29-ba06-4900-8362-c8aeb16928ce"
+      ]
+    },
+    "Meta": {
+      "X": 629,
+      "Y": 184,
+      "Label": "Speaker",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "be7d66e8-1c0f-40ef-ac77-e3a7fac84bd7",
+      "Type": "VolumeLevel",
+      "Parameters": [
+        "62c4bea2-f635-4afc-ba6a-88743c078207"
+      ]
+    },
+    "Meta": {
+      "X": 300,
+      "Y": 187,
+      "Label": "VolumeLevel",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "af1d6b29-ba06-4900-8362-c8aeb16928ce",
+      "Type": "Volume",
+      "Parameters": [
+        "be7d66e8-1c0f-40ef-ac77-e3a7fac84bd7",
+        "0,19761194"
+      ]
+    },
+    "Meta": {
+      "X": 468,
+      "Y": 186,
+      "Label": "Volume",
+      "Color": "#FF000000"
+    }
+  }
+]

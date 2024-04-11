@@ -1,0 +1,48 @@
+[
+  {
+    "Filter": {
+      "Id": "e3ce7bd2-0dc6-4566-93d0-4737badf6afd",
+      "Type": "Input",
+      "Parameters": [
+        "C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\22gzCashApp.wav"
+      ]
+    },
+    "Meta": {
+      "X": 111,
+      "Y": 309,
+      "Label": "Input",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "6cb72d82-ac6c-4762-a462-3a4660363a8b",
+      "Type": "FurieVisualizer",
+      "Parameters": [
+        "e3ce7bd2-0dc6-4566-93d0-4737badf6afd",
+        "10"
+      ]
+    },
+    "Meta": {
+      "X": 312,
+      "Y": 309,
+      "Label": "FurieVisualizer",
+      "Color": "#FF0000FF"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "b6c64399-e98a-4e13-960d-d0f23f9d6326",
+      "Type": "Speaker",
+      "Parameters": [
+        "6cb72d82-ac6c-4762-a462-3a4660363a8b"
+      ]
+    },
+    "Meta": {
+      "X": 518,
+      "Y": 310,
+      "Label": "Speaker",
+      "Color": "#FF000000"
+    }
+  }
+]

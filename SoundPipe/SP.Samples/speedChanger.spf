@@ -1,0 +1,48 @@
+[
+  {
+    "Filter": {
+      "Id": "e55c9691-7f03-4469-9b2a-059770619cdb",
+      "Type": "Input",
+      "Parameters": [
+        "C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\22gzCashApp.wav"
+      ]
+    },
+    "Meta": {
+      "X": 213,
+      "Y": 244,
+      "Label": "Input",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "5c203be1-9dc5-44b6-ba80-f7cae5363035",
+      "Type": "Speed",
+      "Parameters": [
+        "e55c9691-7f03-4469-9b2a-059770619cdb",
+        "0,49707463"
+      ]
+    },
+    "Meta": {
+      "X": 384,
+      "Y": 246,
+      "Label": "Speed",
+      "Color": "#FFFFA500"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "21891e9e-5b04-44f3-b066-b7c58fb657f1",
+      "Type": "Speaker",
+      "Parameters": [
+        "5c203be1-9dc5-44b6-ba80-f7cae5363035"
+      ]
+    },
+    "Meta": {
+      "X": 549,
+      "Y": 245,
+      "Label": "Speaker",
+      "Color": "#FF000000"
+    }
+  }
+]

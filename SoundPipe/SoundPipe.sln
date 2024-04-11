@@ -11,51 +11,57 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Domain", "SP.Domain\SP.D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SP.Filters", "SP.Filters", "{082EEC55-0C97-484E-9B1D-6992473298D2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Volume", "SP.Filters.Volume\SP.Filters.Volume.csproj", "{AC5364A1-1433-4468-A7D4-B5064A58F880}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Volume", "SP.Filters\SP.Filters.Volume\SP.Filters.Volume.csproj", "{AC5364A1-1433-4468-A7D4-B5064A58F880}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.UI", "SP.UI\SP.UI.csproj", "{31775D7C-A876-4BB4-9FA5-71FEC00F6327}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Input", "SP.Filters.Input\SP.Filters.Input.csproj", "{7EAC9022-1094-4902-8838-D3F7557AA972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Input", "SP.Filters\SP.Filters.Input\SP.Filters.Input.csproj", "{7EAC9022-1094-4902-8838-D3F7557AA972}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Speaker", "SP.Filters.Speaker\SP.Filters.Speaker.csproj", "{F1D235E5-F562-409B-8123-C593F991AD66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Speaker", "SP.Filters\SP.Filters.Speaker\SP.Filters.Speaker.csproj", "{F1D235E5-F562-409B-8123-C593F991AD66}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.VolumeLevel", "SP.Filters.VolumeLevel\SP.Filters.VolumeLevel.csproj", "{3AF215CC-0CAB-4C61-9EB0-D770E1106A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.VolumeLevel", "SP.Filters\SP.Filters.VolumeLevel\SP.Filters.VolumeLevel.csproj", "{3AF215CC-0CAB-4C61-9EB0-D770E1106A75}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Hub", "SP.Filters.Hub\SP.Filters.Hub.csproj", "{81D0AA16-2763-4201-9DB9-8534C9869DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Hub", "SP.Filters\SP.Filters.Hub\SP.Filters.Hub.csproj", "{81D0AA16-2763-4201-9DB9-8534C9869DF3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Peeker", "SP.Filters.Peeker\SP.Filters.Peeker.csproj", "{12DE7682-EBFB-4EEB-A474-5583A8024E69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Peeker", "SP.Filters\SP.Filters.Peeker\SP.Filters.Peeker.csproj", "{12DE7682-EBFB-4EEB-A474-5583A8024E69}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.WaveVisualizer", "SP.Filters.WaveVisualizer\SP.Filters.WaveVisualizer.csproj", "{96A3D946-BAE0-4E8B-A727-9695129D1E12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.WaveVisualizer", "SP.Filters\SP.Filters.WaveVisualizer\SP.Filters.WaveVisualizer.csproj", "{96A3D946-BAE0-4E8B-A727-9695129D1E12}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SP.Installer", "SP.Installer\SP.Installer.vdproj", "{BE7DDBE8-35AB-4841-94DF-C47BA0A58C64}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Add", "SP.Filters.Add\SP.Filters.Add.csproj", "{26204F1E-9C2F-46FE-A1E7-2DF4A4A3F1B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Add", "SP.Filters\SP.Filters.Add\SP.Filters.Add.csproj", "{26204F1E-9C2F-46FE-A1E7-2DF4A4A3F1B3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Channel", "SP.Filters.Channel\SP.Filters.Channel.csproj", "{904857FB-7783-41DC-8766-6492A5DCCBAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Channel", "SP.Filters\SP.Filters.Channel\SP.Filters.Channel.csproj", "{904857FB-7783-41DC-8766-6492A5DCCBAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Speed", "SP.Filters.Speed\SP.Filters.Speed.csproj", "{5DC0E5CB-929C-46A7-A68C-774E6F00B97D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Speed", "SP.Filters\SP.Filters.Speed\SP.Filters.Speed.csproj", "{5DC0E5CB-929C-46A7-A68C-774E6F00B97D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.LowPass", "SP.Filters.LowPass\SP.Filters.LowPass.csproj", "{D5738708-20F7-42D8-9E86-10BB65BF7EC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.LowPass", "SP.Filters\SP.Filters.LowPass\SP.Filters.LowPass.csproj", "{D5738708-20F7-42D8-9E86-10BB65BF7EC5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.StatsVisualizer", "SP.Filters.StatsVisualizer\SP.Filters.StatsVisualizer.csproj", "{0165CC42-FC0D-4886-9B8D-600CE8B0402D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.StatsVisualizer", "SP.Filters\SP.Filters.StatsVisualizer\SP.Filters.StatsVisualizer.csproj", "{0165CC42-FC0D-4886-9B8D-600CE8B0402D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.ChunkCut", "SP.Filters.ChunkCut\SP.Filters.ChunkCut.csproj", "{D490F87A-65FD-4F6F-B579-A34D2F75F37D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.ChunkCut", "SP.Filters\SP.Filters.ChunkCut\SP.Filters.ChunkCut.csproj", "{D490F87A-65FD-4F6F-B579-A34D2F75F37D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Skip", "SP.Filters.Skip\SP.Filters.Skip.csproj", "{371D4102-DDB0-40AE-A303-056ADDF72D80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Skip", "SP.Filters\SP.Filters.Skip\SP.Filters.Skip.csproj", "{371D4102-DDB0-40AE-A303-056ADDF72D80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.FurieVisualizer", "SP.Filters.FurieVisualizer\SP.Filters.FurieVisualizer.csproj", "{484C1F2C-476A-401A-ADAD-767AE70E69C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.FurieVisualizer", "SP.Filters\SP.Filters.FurieVisualizer\SP.Filters.FurieVisualizer.csproj", "{484C1F2C-476A-401A-ADAD-767AE70E69C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.SinGenerator", "SP.Filters.SinGenerator\SP.Filters.SinGenerator.csproj", "{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.SinGenerator", "SP.Filters\SP.Filters.SinGenerator\SP.Filters.SinGenerator.csproj", "{D1C883BC-EE35-4818-B947-FCAE0E5F6D1A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.SaveToFile", "SP.Filters.SaveToFile\SP.Filters.SaveToFile.csproj", "{11F2CD3C-7D3C-4C50-B16D-E40F0F074A89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.SaveToFile", "SP.Filters\SP.Filters.SaveToFile\SP.Filters.SaveToFile.csproj", "{11F2CD3C-7D3C-4C50-B16D-E40F0F074A89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.Silent", "SP.Filters.Silent\SP.Filters.Silent.csproj", "{C4CB2BC0-93E0-496C-BFAE-B34EFC9AAF0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Silent", "SP.Filters\SP.Filters.Silent\SP.Filters.Silent.csproj", "{C4CB2BC0-93E0-496C-BFAE-B34EFC9AAF0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.Condition", "SP.Filters.Condition\SP.Filters.Condition.csproj", "{BA99C7A8-B047-49E9-B781-A1E5E0DEB9A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.Condition", "SP.Filters\SP.Filters.Condition\SP.Filters.Condition.csproj", "{BA99C7A8-B047-49E9-B781-A1E5E0DEB9A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.ButtonGate", "SP.Filters.ButtonGate\SP.Filters.ButtonGate.csproj", "{665A553E-0F52-45CD-8C8E-BF5D70690FCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.ButtonGate", "SP.Filters\SP.Filters.ButtonGate\SP.Filters.ButtonGate.csproj", "{665A553E-0F52-45CD-8C8E-BF5D70690FCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Filters.VolumeGate", "SP.Filters.VolumeGate\SP.Filters.VolumeGate.csproj", "{CA41371D-1C4A-4972-946C-69D614BBD81A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SP.Filters.VolumeGate", "SP.Filters\SP.Filters.VolumeGate\SP.Filters.VolumeGate.csproj", "{CA41371D-1C4A-4972-946C-69D614BBD81A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SP.Samples", "SP.Samples", "{AA04D49B-E820-421C-8B2B-E26824247307}"
+	ProjectSection(SolutionItems) = preProject
+		SP.Samples\helloWorld.spf = SP.Samples\helloWorld.spf
+		SP.Samples\volume.spf = SP.Samples\volume.spf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

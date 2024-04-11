@@ -1,0 +1,50 @@
+[
+  {
+    "Filter": {
+      "Id": "5ff5c143-a96b-4760-b8a4-d7a8d976d9dd",
+      "Type": "Input",
+      "Parameters": [
+        "C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\22gzCashApp.wav"
+      ]
+    },
+    "Meta": {
+      "X": 165,
+      "Y": 286,
+      "Label": "Input",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "fdbdce2d-8790-4769-944f-1f68db77edf8",
+      "Type": "Channel",
+      "Parameters": [
+        "5ff5c143-a96b-4760-b8a4-d7a8d976d9dd",
+        "between"
+      ]
+    },
+    "Meta": {
+      "X": 316,
+      "Y": 287,
+      "Label": "Channel",
+      "Color": "#FF000000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "1a80a750-d464-4d7c-8438-5fefdc16c68a",
+      "Type": "SaveToFile",
+      "Parameters": [
+        "fdbdce2d-8790-4769-944f-1f68db77edf8",
+        "F:\\out1.wav",
+        "77"
+      ]
+    },
+    "Meta": {
+      "X": 473,
+      "Y": 288,
+      "Label": "SaveToFile",
+      "Color": "#FF0000FF"
+    }
+  }
+]

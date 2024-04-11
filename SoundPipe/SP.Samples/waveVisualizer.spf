@@ -1,0 +1,79 @@
+[
+  {
+    "Filter": {
+      "Id": "2326831e-6558-41ab-90c3-a29b4add5a7c",
+      "Type": "Input",
+      "Parameters": [
+        "C:\\Users\\Eax\\Desktop\\MAI\\DIPL\\Experiments\\Workspace\\22gzCashApp.wav"
+      ]
+    },
+    "Meta": {
+      "X": 87,
+      "Y": 260,
+      "Label": "Input",
+      "Color": "#FF808080"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "ffd9cbd2-31a4-40cc-8340-1abf87e177a1",
+      "Type": "Volume",
+      "Parameters": [
+        "9a19d69f-3eae-4fc0-aaf0-7dd5295e6550",
+        "0,111641794"
+      ]
+    },
+    "Meta": {
+      "X": 524,
+      "Y": 260,
+      "Label": "Громкость",
+      "Color": "#FF808080"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "07c11bf4-084c-42ca-8954-3896c56e1c05",
+      "Type": "Speaker",
+      "Parameters": [
+        "ffd9cbd2-31a4-40cc-8340-1abf87e177a1"
+      ]
+    },
+    "Meta": {
+      "X": 674,
+      "Y": 259,
+      "Label": "Speaker",
+      "Color": "#FF808080"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "54151d8d-0ab6-4362-a274-e6204e0fbbf0",
+      "Type": "WaveVisualizer",
+      "Parameters": [
+        "2326831e-6558-41ab-90c3-a29b4add5a7c"
+      ]
+    },
+    "Meta": {
+      "X": 236,
+      "Y": 259,
+      "Label": "WaveVisualizer",
+      "Color": "#FFFF0000"
+    }
+  },
+  {
+    "Filter": {
+      "Id": "9a19d69f-3eae-4fc0-aaf0-7dd5295e6550",
+      "Type": "ChunkCut",
+      "Parameters": [
+        "54151d8d-0ab6-4362-a274-e6204e0fbbf0",
+        "500"
+      ]
+    },
+    "Meta": {
+      "X": 378,
+      "Y": 262,
+      "Label": "ChunkCut",
+      "Color": "#FF808080"
+    }
+  }
+]
