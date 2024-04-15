@@ -39,6 +39,10 @@ namespace SP.UI.ViewModels
         private void RemoveNode(string nodeId)
         {
             SyncUiGraphToGraphConstructor();
+            if (_selectedNode == nodeId)
+            {
+                PropertyTypes = Array.Empty<Components.PropertiesStore.PropertyType>();
+            }
             _shemeConstructor.RemoveFilter(nodeId);
             SyncGraphConstructorToUiGraph();
             NotifyShemeModified();

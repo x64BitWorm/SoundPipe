@@ -87,6 +87,11 @@ namespace SP.UI.ViewModels
                 return;
             }
             var fileName = fileDialog.FileName;
+            LoadShemeFromFile(fileName);
+        }
+
+        public void LoadShemeFromFile(string fileName)
+        {
             try
             {
                 var content = File.ReadAllText(fileName);
@@ -98,7 +103,7 @@ namespace SP.UI.ViewModels
             }
             catch (LoadFilterException e)
             {
-                StatusBarSend.PushMessage($"Не удалось загрузить фильтр '{e.FilterName}'\r\n{e.InnerMessage}\r\nВозможно плагин этого фильтра не установлен", 
+                StatusBarSend.PushMessage($"Не удалось загрузить фильтр '{e.FilterName}'\r\n{e.InnerMessage}\r\nВозможно плагин этого фильтра не установлен",
                     Components.StatusBar.StatusMessageType.Error, true);
             }
             catch (Exception e)
@@ -106,6 +111,16 @@ namespace SP.UI.ViewModels
                 StatusBarSend.PushMessage($"Не удалось открыть схему - {e.Message}", Components.StatusBar.StatusMessageType.Error, true);
             }
             UpdateTitle();
+        }
+
+        public void ShowSamples()
+        {
+            var url = "https://github.com/x64BitWorm/SoundPipe/tree/main/SoundPipe/SP.Samples";
+            var process = new System.Diagnostics.ProcessStartInfo(url)
+            {
+                UseShellExecute = true,
+            };
+            System.Diagnostics.Process.Start(process);
         }
 
         public void NotifyShemeModified()

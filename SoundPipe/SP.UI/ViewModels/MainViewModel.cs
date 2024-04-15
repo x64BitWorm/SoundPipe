@@ -23,6 +23,7 @@ namespace SP.UI.ViewModels
         private readonly IServiceProvider _serviceProvider;
         private readonly FiltersManager _filtersManager;
         private readonly FilterUpdateService _filterUpdateService;
+        private readonly StartupArgumentsProvider _startupArgumentsProvider;
 
         private SettingsModel _settingsModel;
         private SynchronizationContext _uiContext;
@@ -99,7 +100,8 @@ namespace SP.UI.ViewModels
         public MainViewModel(ShemeProvider shemeProvider, ContextMenuBuilder contextMenuBuilder,
             ShemeGraphConverter shemeGraphConverter, PropertiesViewManager propertiesViewManager,
             ShemeManager shemeManager, IServiceProvider serviceProvider, SettingsProvider settingsProvider,
-            FiltersManager filtersManager, FilterUpdateService filterUpdateService)
+            FiltersManager filtersManager, FilterUpdateService filterUpdateService, 
+            StartupArgumentsProvider startupArgumentsProvider)
         {
             _shemeProvider = shemeProvider;
             _contextMenuBuilder = contextMenuBuilder;
@@ -109,6 +111,7 @@ namespace SP.UI.ViewModels
             _serviceProvider = serviceProvider;
             _filtersManager = filtersManager;
             _filterUpdateService = filterUpdateService;
+            _startupArgumentsProvider = startupArgumentsProvider;
             _settingsModel = settingsProvider.Load();
             CreateEmptyShemeMenu();
             StatusBarSend = new StatusBarMessagePipe();
@@ -118,6 +121,10 @@ namespace SP.UI.ViewModels
         {
             _uiContext = SynchronizationContext.Current;
             StatusBarSend.PushMessage("Добро пожаловать в SoundPipe!", StatusMessageType.Info, true);
+            if (_startupArgumentsProvider.ShemePathPassed())
+            {
+                LoadShemeFromFile(_startupArgumentsProvider.GetShemePath());
+            }
         }
 
         public ShemeState GetShemeState()

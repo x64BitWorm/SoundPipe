@@ -29,7 +29,7 @@ namespace SP.UI.ViewModels
                 var newFilePath = Path.Combine(filtersDir, fileName);
                 if (File.Exists(newFilePath))
                 {
-                    StatusBarSend.PushMessage($"Файл фильтра уже установлен -\r\n{newFilePath}", Components.StatusBar.StatusMessageType.Warning, true, "Заменить", () =>
+                    StatusBarSend.PushMessage($"Файл фильтра уже установлен -\r\n{newFilePath}", Components.StatusBar.StatusMessageType.Warning, true, "Обновить", () =>
                     {
                         _filterUpdateService.ScheduleUpdate(filePath);
                         StatusBarSend.PushMessage($"Фильтр будет заменен после перезапуска", Components.StatusBar.StatusMessageType.Success, true);

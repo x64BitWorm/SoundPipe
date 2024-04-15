@@ -71,6 +71,11 @@ namespace SP.UI
             _viewModel.SaveShemeToFile(true);
         }
 
+        private void OpenSamplesClick(object sender, RoutedEventArgs e)
+        {
+            _viewModel.ShowSamples();
+        }
+
         private void MenuRunClick(object sender, RoutedEventArgs e)
         {
             _viewModel.RunSheme();

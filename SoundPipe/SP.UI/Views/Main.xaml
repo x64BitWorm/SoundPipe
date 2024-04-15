@@ -41,6 +41,12 @@
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="Сохранить как..." Click="MenuFileSaveAsClick" />
+                <Separator />
+                <MenuItem Header="Открыть примеры" Click="OpenSamplesClick">
+                    <MenuItem.Icon>
+                        <emoji:TextBlock Text="💡" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Схема">
                 <MenuItem Header="Запустить" Click="MenuRunClick">
